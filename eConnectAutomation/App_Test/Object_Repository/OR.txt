@@ -1,0 +1,386 @@
+//--OBJECT REPOSITORY (read and parsed as PROPERTY file from Keyword Functions)
+//-----------------------------------------------------------------------------
+
+//LeanSwift - Magento User
+//------------------------
+
+Xpath_HomePage_Account_Link = //a[@class='skip-link skip-account']
+Xpath_HomePage_MyAccount_Link = //a[@title='My Account']
+Xpath_HomePage_Register_Link = //a[@title='Register']
+Xpath_HomePage_LogIn_Link = //a[@title='Log In']
+Xpath_MyAccountPage_AddressBook_Link = //div[@class='block-content']/ul/li[3]/a
+Id_AddNewAddrPage_Company_TextBox = company
+Id_AddNewAddrPage_Telephone_TextBox = telephone
+Id_AddNewAddrPage_Street1_TextBox = street_1
+Id_AddNewAddrPage_Street2_TextBox = street_2
+Id_AddNewAddrPage_City_TextBox = city
+Id_AddNewAddrPage_State_TextBox = region_id
+Id_AddNewAddrPage_Zip_TextBox = zip
+Id_AddNewAddrPage_Country_TextBox = country
+Xpath_AddNewAddrPage_SaveAddr_Button = //button[@title='Save Address']
+Id_RegisterPage_FirstName_TextBox = firstname
+Id_RegisterPage_LastName_TextBox = lastname
+Id_RegisterPage_EmailAddr_TextBox = email_address
+Id_RegisterPage_Password_TextBox = password
+Id_RegisterPage_ConfirmPassword_TextBox = confirmation
+Xpath_RegisterPage_Register_Button = //button[@title='Register']
+Id_LoginPage_UserName_TextBox = email
+Id_LoginPage_Password_TextBox = pass
+Id_LoginPage_Login_Button = send2
+Id_AccountPage_Search_TextBox = search
+Xpath_SearchResultPage_ViewDetails_Button = //a[@class='button' and @title='View Details']
+Id_ViewDetailsPage_GiftAmount_TextBox = giftcard_amount_input
+Id_ViewDetailsPage_GiftRecipientName_TextBox = giftcard_recipient_name
+Id_ViewDetailsPage_GiftMessage_TextBox = giftcard_message
+Id_ViewDetailsPage_GiftCardQuantity_TextBox = qty
+Xpath_AccountPage_Search_Button = //button[@class='button search-button']
+Xpath_SearchResultPage_AddToCart_Button = //button[@class='button btn-cart']
+Xpath_CartPage_Quantity_TextBox = //input[@class='input-text qty']
+Xpath_CartPage_Update_Button = //table[@id='shopping-cart-table']/tfoot/tr/td/button[3]
+Xpath_CheckOutPage_Checkout_Button = //li[@class='method-checkout-cart-methods-onepage-bottom']/button[@class='button btn-proceed-checkout btn-checkout']
+Id_CheckOutPage_PayCheckMoney_Radio = p_method_checkmo
+Id_CheckOutPage_PayCreditCard_Radio = p_method_ccsave
+Id_CheckOutPage_CCName_TextBox = ccsave_cc_owner
+Id_CheckOutPage_CCType_DropDown = ccsave_cc_type
+Id_CheckOutPage_CCNumber_TextBox = ccsave_cc_number
+Id_CheckOutPage_CCExpMonth_DropDown = ccsave_expiration
+Id_CheckOutPage_CCExpYear_DropDown = ccsave_expiration_yr
+Id_CheckOutPage_CCCCVNumber_TextBox = ccsave_cc_cid
+Id_CheckOutPage_PlaceOrder_Button = aw-onestepcheckout-place-order-button
+Id_CheckOutPage_Comments_TextArea = comments
+Xpath_CommercePage_OrderPlaceConf_Text = //h2[@class='sub-title']
+Xpath_CartPage_Tax_Text = //table[@id='shopping-cart-totals-table']/tfoot/tr[3]/td[2]/span
+Xpath_CheckoutPage_Tax_Text = //div[@id='aw-onestepcheckout-review-table-cart-wrapper']/table/tfoot/tr[5]/td[2]/span
+Xpath_CheckoutPage_ShippingFee_Text = //div[@id='aw-onestepcheckout-review-table-cart-wrapper']/table/tfoot/tr[2]/td[2]/span
+Xpath_SearchResultPage_Chair5_Link = //h2[@class='product-name']/a[@title='Chair 5']
+Id_ProductPage_Chair5Price_Text = product-price-9
+Xpath_SearchResultPage_Chair1_Link = //h2[@class='product-name']/a[@title='Chair 1']
+Id_CheckOutPage_GiftCardCode_TextBox = enterprise_giftcard_code
+Id_CheckOutPage_AddGiftCard_Button = aw-onestepcheckout-enterprise-giftcard-apply-btn
+Xpath_ProductPage_ATPDate_Text = //li[@class='atp_details atp_date_detail']/span[2]
+Xpath_ProductPage_ATPQty_Text = //li[@class='atp_details atp_qty_detail']/span[2]
+
+//LeanSwift - Magento Admin
+//-------------------------
+
+Id_AdminLoginPage_UserName_TextBox = username
+Id_AdminLoginPage_Password_TextBox = login
+Xpath_AdminLoginPage_Login_Button = //input[@type='submit' and @title='Login']
+Xpath_IncomingMessage_Close_Button = //a[@title='close']
+Xpath_DashboardPage_Sales_Link = //ul[@id='nav']/li[2]/a/span
+Xpath_DashboardPage_Customers_Link = //ul[@id='nav']/li[4]/a/span
+Xpath_DashboardPage_Orders_Link = //ul[@id='nav']/li[2]/ul/li[1]/a/span
+Xpath_DashboardPage_System_Link = //ul[@id='nav']/li[9]/a/span
+Xpath_DashboardPage_Scheduler_Link = //ul[@id='nav']/li[9]/ul/li[1]/a/span
+Xpath_DashboardPage_ScheduleConfiguration_Link = //ul[@id='nav']/li[9]/ul/li[1]/ul/li[1]/a/span
+Xpath_DashboardPage_Catalog_Link = //ul[@id='nav']/li[3]/a/span
+Xpath_DashboardPage_ManageProducts_Link = //ul[@id='nav']/li[3]/ul/li[1]/a/span
+Xpath_DashboardPage_GiftCardAccounts_Link = //ul[@id='nav']/li[4]/ul/li[7]/a/span
+Xpath_DashboardPage_Configurations_Link = //ul[@id='nav']/li[9]/ul/li[20]/a/span
+Id_ManageGiftCard_Status_DropDown = giftcardaccountGrid_giftcardaccount_filter_state
+Xpath_ManageGiftCard_Search_Button = //button[@type='button' and @title='Search']
+Xpath_ManageGiftCard_GiftCardAccount1_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[1]/td[3]
+Xpath_ManageGiftCard_GiftCardAmount1_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[1]/td[9]
+Xpath_ManageGiftCard_GiftCardAccount2_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[2]/td[3]
+Xpath_ManageGiftCard_GiftCardAmount2_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[2]/td[9]
+Xpath_ManageGiftCard_GiftCardAccount3_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[3]/td[3]
+Xpath_ManageGiftCard_GiftCardAmount3_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[3]/td[9]
+Xpath_ManageGiftCard_GiftCardAccount4_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[4]/td[3]
+Xpath_ManageGiftCard_GiftCardAmount4_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[4]/td[9]
+Name_SalesOrderPage_LastestOrder_Checkbox = order_ids
+Id_SalesOrderPage_SalesAction_Dropdown = sales_order_grid_massaction-select
+Id_ManageProductPage_ProductAction_Dropdown = productGrid_massaction-select
+Xpath_SalesOrderPage_Submit_Button = //button[@title='Submit' and @type='button']
+Xpath_ManageProductPage_Submit_Button = //button[@title='Submit' and @type='button']
+Xpath_SalesOrderPage_InitialStatus_Text = //table[@id='sales_order_grid_table']/tbody/tr/td[11]
+Xpath_SalesOrderPage_OrderView_Link = //table[@id='sales_order_grid_table']/tbody/tr[1]/td[12]/a
+Id_SalesOrderPage_RMA_Link = sales_order_view_tabs_order_rma
+Xpath_SalesOrderPage_CreateRMA_Button = //button[@type='button' and @title='Create RMA']
+Id_CreateRMAPage_RMAItems_Link = rma_info_tabs_items_section
+Xpath_CreateRMAPage_AddProducts_Button = //button[@type='button' and @title='Add Products']
+Xpath_CreateRMAPage_SelectProduct_Checkbox = //table[@id='order_items_grid_table']/tbody/tr/td[1]/input
+Xpath_CreateRMAPage_AddSelectedProducts_Button = //button[@type='button' and @title='Add Selected Product(s) to RMA']
+Id_CreateRMAPage_RequestedQty_TextBox = rma_properties_qty_requested_0
+Id_CreateRMAPage_ReturnReason_Dropdown = rma_properties_reason_0
+Id_CreateRMAPage_Resolution_Dropdown = rma_properties_resolution_0
+Xpath_CreateRMAPage_SubmitRMA_Button = //button[@type='button' and @title='Submit RMA']
+Xpath_ManageRMAPage_RMATableFirstEntry_Checkbox = //table[@id='rmaGrid_table']/tbody/tr[1]/td[1]/input
+Id_ManageRMAPage_RMAActions_Dropdown = rmaGrid_massaction-select
+Xpath_ManageRMAPage_RMAActionsSubmit_Button = //button[@type='button' and @title='Submit']
+Xpath_ManageRMAPage_Status_Text = //table[@id='rmaGrid_table']/tbody/tr[1]/td[9]
+Xpath_ManageRMAPage_ViewRMA_Link = //table[@id='rmaGrid_table']/tbody/tr[1]/td[10]/a
+Xpath_ManageRMAPage_FinalOrderNumber_Text = //table[@id='rmaGrid_table']/tbody/tr[1]/td[4]
+Xpath_ManageRMAPage_GeneralResolution_Text = //table[@id='enterprise_rma_item_edit_grid_table']/tbody/tr/td[7]
+Xpath_ManageRMAPage_GeneralStatus_Text = //table[@id='enterprise_rma_item_edit_grid_table']/tbody/tr/td[8]
+Xpath_SalesOrderPage_FinalOrderNumber_Text = //table[@id='sales_order_grid_table']/tbody/tr/td[4]
+Id_ManageProductsPage_ProductName_TextBox = productGrid_product_filter_name
+Xpath_ManageProductsPage_EditProduct_Link = //table[@id='productGrid_table']/tbody/tr/td[13]/a
+Id_ManageProductsPage_InventoryTab_Text = product_info_tabs_inventory
+Xpath_ManageProductsPage_GeneralTab_Text = //a[@title='General']
+Xpath_ManageProductsPage_PricesTab_Text = //a[@title='Prices']
+Id_ManageProductsPage_GeneralProductName_TextBox = name
+Id_ManageProductsPage_GeneralProductWeight_TextBox = weight
+Id_ManageProductsPage_PricesPrice_TextBox = price
+Xpath_ManageProductsPage_Product_Checkbox = //input[@name='product']
+Id_ManageProductsPage_InventoryQuantity_TextBox = inventory_qty
+Xpath_ManageProductsPage_InventorySave_Button = //button[@title='Save' and @type='button']
+Xpath_ManageProductsPage_ProductQuantity_Text = //table[@id='productGrid_table']/tbody/tr/td[9]
+Xpath_ScheduleConfigurationPage_UpdateStock_Checkbox = //input[@value='leanswift_update_stock']
+Id_ScheduleConfigurationPage_UpdateStockActions_Dropdown = cron_grid_massaction-select
+Xpath_ScheduleConfigurationPage_Submit_Button = //button[@title='Submit' and @type='button']
+Xpath_ScheduleConfigurationPage_JobRunSuccess_Text = //li[@class='success-msg']/ul/li/span
+Id_ConfigurationsPage_LeanSwift_Image = leanswift_logo
+Xpath_ConfigurationsPage_eConnect_SubMenuText = //ul[@id='system_config_tabs']/li[7]/dl/dd[1]/a/span
+Xpath_ConfigurationsPage_RMA_SubMenuText = //ul[@id='system_config_tabs']/li[7]/dl/dd[2]/a/span
+Xpath_ConfigurationsPage_GiftCards_SubMenuText = //ul[@id='system_config_tabs']/li[7]/dl/dd[3]/a/span
+Xpath_ConfigurationsPage_MaterialPlan_SubMenuText = //ul[@id='system_config_tabs']/li[7]/dl/dd[4]/a/span
+Xpath_OrderViewPage_GiftCardAccounts_Text = //div[contains(@id,'order_item')]/div/dl/dd[6]
+Xpath_OrderViewPage_Back_Button = //button[@type='button' and @title='Back']
+
+//eConnect Configuration
+Xpath_eConnectPage_eConnect_HeaderText = //div[@id='content']/div/div[2]/table/tbody/tr/td[1]/h3
+Id_eConnectPage_GeneralEmail_TextBox = leanswift_connector_general_email_errors
+Id_eConnectPage_GeneralServiceURL_TextBox = leanswift_connector_general_service_url
+Id_eConnectPage_GeneralUseERPOrdHist_Dropdown = leanswift_connector_general_use_erp_orderhistory
+Id_eConnectPage_GeneralTestMode_Dropdown = leanswift_connector_general_testmode
+Id_eConnectPage_GeneralDebug_Dropdown = leanswift_connector_general_debug
+Id_eConnectPage_BasicDataCompany_TextBox = leanswift_connector_basic_data_company
+Id_eConnectPage_BasicDataDivision_TextBox = leanswift_connector_basic_data_division
+Id_eConnectPage_BasicDataFacility_TextBox = leanswift_connector_basic_data_facility
+Id_eConnectPage_BasicDataWarehouse_TextBox = leanswift_connector_basic_data_warehouse
+Id_eConnectPage_BasicDataPriceList_TextBox = leanswift_connector_basic_data_erp_price_code
+Id_eConnectPage_BasicDataCurrency_TextBox = leanswift_connector_basic_data_erp_currency_code
+Id_eConnectPage_BasicDataOrderType_TextBox = leanswift_connector_basic_data_order_type
+Id_eConnectPage_AuthenticationoAuth_Dropdown = leanswift_connector_secure_enable_oauth
+Id_eConnectPage_AuthenticationWebServiceUserName_TextBox = leanswift_connector_secure_web_services_username
+Id_eConnectPage_AuthenticationWebServicePassword_TextBox = leanswift_connector_secure_web_services_password
+Id_eConnectPage_AuthenticationClientID_TextBox = leanswift_connector_secure_web_services_clientid
+Id_eConnectPage_AuthenticationClientSecret_TextBox = leanswift_connector_secure_web_services_clientsecret
+Xpath_eConnectPage_ShippingRecord_WebElements = //tr[@id='row_leanswift_connector_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr
+Xpath_eConnectPage_ShippingEmptyAddMethod_Button = //tr[@id='row_leanswift_connector_shipping_method_delivery_method']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
+Xpath_eConnectPage_ShippingAddToEndMethod_Button = //tr[@id='row_leanswift_connector_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
+Xpath_eConnectPage_ShippingShippingMethod_Dropdown = //tr[@id='row_leanswift_connector_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'shipping_method')]/select
+Xpath_eConnectPage_ShippingM3DeliveryMethod_TextBox = //tr[@id='row_leanswift_connector_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr[2]/td[2]/input
+Xpath_eConnectPage_ShippingM3DeliveryTerm_TextBox = //tr[@id='row_leanswift_connector_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_delivery_term')]/input
+Id_eConnectPage_ProdSyncSuperAttribute_TextBox = leanswift_connector_sync_super_attribute
+Id_eConnectPage_ProdSyncWebsiteName_TextBox = leanswift_connector_sync_website_name
+Id_eConnectPage_ProdSyncAttrSetName_TextBox = leanswift_connector_sync_attribute_set_name
+Xpath_eConnectPage_ProdSyncM3AttributesRecord_WebElements = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr
+Xpath_eConnectPage_ProdSyncM3AttributesEmptyAddMethod_Button = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
+Xpath_eConnectPage_ProdSyncM3AttributesAddToEndMethod_Button = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown1 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'magento_attribute')]/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox1 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_attribute')]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox1 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'default_value')]/input
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown2 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'magento_attribute')]/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox2 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_attribute')]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox2 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'default_value')]/input
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown3 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'magento_attribute')]/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox3 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'m3_attribute')]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox3 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'default_value')]/input
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown4 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'magento_attribute')]/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox4 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'m3_attribute')]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox4 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'default_value')]/input
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown5 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'magento_attribute')]/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox5 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'m3_attribute')]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox5 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'default_value')]/input
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown6 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'magento_attribute')]/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox6 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'m3_attribute')]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox6 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'default_value')]/input
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown7 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'magento_attribute')]/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox7 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'m3_attribute')]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox7 = //tr[@id='row_leanswift_connector_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'default_value')]/input
+Id_eConnectPage_CustConfCreateNewCust_Dropdown = leanswift_connector_erp_customer_config_b2c_new_cust
+Id_eConnectPage_CustConfCommonCustID_TextBox = leanswift_connector_erp_customer_config_b2c_common_cust_id
+Id_eConnectPage_CustConfCommonCustIDNewYes_TextBox = leanswift_connector_erp_customer_config_b2c_cust_tmpl_id
+Id_eConnectPage_ERPCustRegisterEnable_Dropdown = leanswift_connector_erp_customer_config_b2b_enable_b2b
+Id_eConnectPage_SalesEnableOrderComments_Dropdown = leanswift_connector_sales_order_comments
+Id_eConnectPage_SalesSendConfirmation_Dropdown = leanswift_connector_sales_send_order_conf_after_erp_order_placed
+Id_eConnectPage_SalesDisplayInvoice_Dropdown = leanswift_connector_sales_display_invoice
+Id_eConnectPage_SalesCapturePaymentOnline_Dropdown = leanswift_connector_sales_payment_capture
+Id_eConnectPage_OrderChargesTaxTransfer_Dropdown = leanswift_connector_order_charges_sales_tax_transfer
+Id_eConnectPage_OrderChargesTaxChargeCode_Dropdown = leanswift_connector_order_charges_sales_tax_charge_id
+Id_eConnectPage_OrderChargesFeeChargeType_Dropdown = leanswift_connector_order_charges_charge_type
+Id_eConnectPage_OrderChargesFeeChargeCode_Dropdown = leanswift_connector_order_charges_charge_code
+Id_eConnectPage_OrderChargesFeeChargeCodeNS_Dropdown = leanswift_connector_order_charges_non_stock_item
+Id_eConnectPage_PaymentsReAuthAmount_TextBox = leanswift_connector_payments_reauth_amount
+Xpath_eConnectPage_PaymentsPayProviderRecord_WebElements = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[1]/table/tbody/tr
+Xpath_eConnectPage_PaymentsPayProviderEmptyAddMethod_Button = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
+Xpath_eConnectPage_PaymentsPayProviderAddToEndMethod_Button = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
+Xpath_eConnectPage_PaymentsMagentoMethod_Dropdown1 = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'-payment_method')]/select
+Xpath_eConnectPage_PaymentsM3Terms_Dropdown1 = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_payment_terms')]/select
+Xpath_eConnectPage_PaymentsM3Method_Dropdown1 = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_payment_method')]/select
+Xpath_eConnectPage_PaymentsMagentoMethod_Dropdown2 = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'-payment_method')]/select
+Xpath_eConnectPage_PaymentsM3Terms_Dropdown2 = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_payment_terms')]/select
+Xpath_eConnectPage_PaymentsM3Method_Dropdown2 = //tr[@id='row_leanswift_connector_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_payment_method')]/select
+Id_eConnectPage_PaymentsInvoiceFeeChargeType_Dropdown = leanswift_connector_payments_invoice_charge_type
+Xpath_eConnectPage_PaymentsInvoiceFeesRecord_WebElements = //tr[@id='row_leanswift_connector_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr
+Xpath_eConnectPage_PaymentsInvoiceFeesEmptyAddMethod_Button = //tr[@id='row_leanswift_connector_payments_invoice_fees']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
+Xpath_eConnectPage_PaymentsInvoiceFeesAddToEndMethod_Button = //tr[@id='row_leanswift_connector_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
+Xpath_eConnectPage_PaymentsInvoicePayMethod_Dropdown = //tr[@id='row_leanswift_connector_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'payment_method')]/select
+Xpath_eConnectPage_PaymentsInvoiceFeeAmount_TextBox = //tr[@id='row_leanswift_connector_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'fee_amount')]/input
+Xpath_eConnectPage_PaymentsInvoiceFeeChargeCode_Dropdown = //tr[@id='row_leanswift_connector_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'fee_code')]/select
+Xpath_eConnectPage_PaymentsInvoiceFeeChargeItemNo_Dropdown = //tr[@id='row_leanswift_connector_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'fee_item_no')]/select
+Id_eConnectPage_PaymentsEnableCreditMemo_Dropdown = leanswift_connector_payments_credit_memo
+Id_eConnectPage_PaymentsCCRefundType_Dropdown = leanswift_connector_payments_credit_type
+Id_eConnectPage_PriceSyncEnable_Dropdown = leanswift_connector_price_sync_enable_price
+Id_eConnectPage_PriceSyncCacheHours_TextBox = leanswift_connector_price_sync_cache_hours
+Id_eConnectPage_InventorySyncProductLoad_Dropdown = leanswift_connector_inventory_sync_sync_on_load
+Id_eConnectPage_InventorySyncAddToCart_Dropdown = leanswift_connector_inventory_sync_sync_on_add_to_cart
+Id_eConnectPage_InventorySyncCheckOut_Dropdown = leanswift_connector_inventory_sync_sync_on_checkout
+Xpath_ConfigurationPage_SaveConfig_Button = //button[@type='button' and @title='Save Config']
+Xpath_ConfigurationPage_SaveConfigSuccessMessage_Text = //li[@class='success-msg']/ul/li/span
+
+//RMA Configurations
+Xpath_RMAPage_RMA_HeaderText=//div[@id='content']/div/div[2]/table/tbody/tr/td[1]/h3
+Id_RMAPage_RMAParamsValidPeriod_TextBox = leanswift_customerreturns_returns_parameters_valid_return_period
+Id_RMAPage_RMAParamsReturnCreditType_Dropdown = leanswift_customerreturns_returns_parameters_returns_stock
+Id_RMAPage_RMAParamsClaimsM3CreditTypeSR_Dropdown = leanswift_customerreturns_returns_parameters_claim_stock_return
+Id_RMAPage_RMAParamsClaimsM3CreditTypeNSR_Dropdown = leanswift_customerreturns_returns_parameters_claim_no_stock_return
+Id_RMAPage_RMAParamsExchangesM3CreditType_Dropdown = leanswift_customerreturns_returns_parameters_exchange_m3_credit_order_type
+Id_RMAPage_RMAParamsExchangesM3DebitType_Dropdown = leanswift_customerreturns_returns_parameters_exchange_m3_debit_order_type
+Xpath_RMAPage_RMAWarehousesRecord_WebElements = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[1]/table/tbody/tr
+Xpath_RMAPage_RMAWarehousesEmptyAddMethod_Button = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
+Xpath_RMAPage_RMAWarehousesAddToEndMethod_Button = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
+Xpath_RMAPage_RMAWarehousesCountry_Dropdown1 = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'country')]/select
+Xpath_RMAPage_RMAWarehousesWarehouse_Dropdown1 = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'warehouse')]/select
+Xpath_RMAPage_RMAWarehousesCountry_Dropdown2 = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'country')]/select
+Xpath_RMAPage_RMAWarehousesWarehouse_Dropdown2 = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'warehouse')]/select
+Xpath_RMAPage_RMAWarehousesCountry_Dropdown3 = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'country')]/select
+Xpath_RMAPage_RMAWarehousesWarehouse_Dropdown3 = //tr[@id='row_leanswift_customerreturns_returns_warehouses_country_warehouse_mapping']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'warehouse')]/select
+Xpath_RMAPage_RMAReasonCodeRecord_WebElements = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr
+Xpath_RMAPage_RMAReasonCodeEmptyAddMethod_Button = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
+Xpath_RMAPage_RMAReasonCodeAddToEndMethod_Button = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
+Xpath_RMAPage_RMAReasonCodeRMACode_Dropdown1 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'reason_code')]/select
+Xpath_RMAPage_RMAReasonCodeDescription_TextBox1 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'description')]/input
+Xpath_RMAPage_RMAReasonCodeRMAType_Dropdown1 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'return_type')]/select
+Xpath_RMAPage_RMAReasonCodeUsableByCust_Dropdown1 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'usable_by_customer')]/select
+Xpath_RMAPage_RMAReasonCodeRMACode_Dropdown2 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'reason_code')]/select
+Xpath_RMAPage_RMAReasonCodeDescription_TextBox2 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'description')]/input
+Xpath_RMAPage_RMAReasonCodeRMAType_Dropdown2 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'return_type')]/select
+Xpath_RMAPage_RMAReasonCodeUsableByCust_Dropdown2 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'usable_by_customer')]/select
+Xpath_RMAPage_RMAReasonCodeRMACode_Dropdown3 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'reason_code')]/select
+Xpath_RMAPage_RMAReasonCodeDescription_TextBox3 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'description')]/input
+Xpath_RMAPage_RMAReasonCodeRMAType_Dropdown3 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'return_type')]/select
+Xpath_RMAPage_RMAReasonCodeUsableByCust_Dropdown3 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'usable_by_customer')]/select
+Xpath_RMAPage_RMAReasonCodeRMACode_Dropdown4 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'reason_code')]/select
+Xpath_RMAPage_RMAReasonCodeDescription_TextBox4 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'description')]/input
+Xpath_RMAPage_RMAReasonCodeRMAType_Dropdown4 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'return_type')]/select
+Xpath_RMAPage_RMAReasonCodeUsableByCust_Dropdown4 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'usable_by_customer')]/select
+Xpath_RMAPage_RMAReasonCodeRMACode_Dropdown5 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'reason_code')]/select
+Xpath_RMAPage_RMAReasonCodeDescription_TextBox5 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'description')]/input
+Xpath_RMAPage_RMAReasonCodeRMAType_Dropdown5 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'return_type')]/select
+Xpath_RMAPage_RMAReasonCodeUsableByCust_Dropdown5 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'usable_by_customer')]/select
+Xpath_RMAPage_RMAReasonCodeRMACode_Dropdown6 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'reason_code')]/select
+Xpath_RMAPage_RMAReasonCodeDescription_TextBox6 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'description')]/input
+Xpath_RMAPage_RMAReasonCodeRMAType_Dropdown6 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'return_type')]/select
+Xpath_RMAPage_RMAReasonCodeUsableByCust_Dropdown6 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'usable_by_customer')]/select
+
+//Gift Cards Configuration
+Xpath_GiftCardsPage_GiftCards_HeaderText = //div[@id='content']/div/div[2]/table/tbody/tr/td[1]/h3
+Id_GiftCardsPage_GeneralGiftCardLineChargeID_Dropdown = leanswift_econnectgiftcard_general_giftcard_linecharge
+Id_GiftCardsPage_GeneralGiftCardHeaderChargeID_Dropdown = leanswift_econnectgiftcard_general_giftcard_headcharge
+
+//Material Plan Configuration
+Xpath_MaterialPlanPage_MaterialPlan_HeaderText = //div[@id='content']/div/div[2]/table/tbody/tr/td[1]/h3
+Id_MaterialPlanPage_GeneralOrderCategory_TextBox = leanswift_materialplan_default_order_category
+Id_MaterialPlanPage_GeneralCacheHours_TextBox = leanswift_materialplan_default_cache_hours
+Id_MaterialPlanPage_DetailPageDisplay_DropDown = leanswift_materialplan_detail_page_enable_productpage
+Id_MaterialPlanPage_DetailPageSyncRealTime_DropDown = leanswift_materialplan_detail_page_sync_realtime
+Id_MaterialPlanPage_CartPageDisplay_DropDown = leanswift_materialplan_cart_page_enable_cartpage
+Id_MaterialPlanPage_CartPageSyncRealTime_DropDown = leanswift_materialplan_cart_page_sync_realtime
+Id_MaterialPlanPage_ProductGridDisplay_DropDown = leanswift_materialplan_product_grid_enable_grid
+
+//LeanSwift - M3H5 Client
+//-----------------------
+
+Id_HomePage_HomeIcon_Button = startDiv
+Xpath_HomePage_ApplicationsArea_Text1 = //body[@class='inforApplicationPadding']
+Xpath_HomePage_ApplicationsArea_Text = //div[@class='gvFillAbsolute']
+Xpath_HomePage_MenuListFirstItem_Text = //div[@id='MyCanvas']/div/div/div[1]/div[10]/div[2]/div/div/ul/li[1]
+Xpath_HomePage_Search_TextBox = //input[@type='text' and @placeholder='Search']
+Xpath_HomePage_SearchIcon_Button = //div[@id='MyCanvas']/div/div/div[1]/div[10]/div[1]/div/div/div/button[2]
+Xpath_HomePage_CustOpenTool_Link = //span[@tag='OIS300']
+Id_OpenToolPage_OrderNum_TextBox = W1OBKV
+Xpath_ProductAvailabilityPage_CollapsedFilter_Button = //button[@class='expandCollapse inforExpandButton closed']
+Id_ProductAvailabilityPage_ItemNumber_TextBox = WWITNO
+Id_ProductAvailabilityPage_Facility_TextBox = W1FACI
+Id_ProductAvailabilityPage_Apply_Button = XT_0168
+Id_ProductAvailabilityPage_WarehouseNumber_TextBox = W1WHLO
+Id_SalesDisplayPage_CustomerNumber_TextBox = WWCUNO
+Id_SalesDisplayPage_ItemNumber_TextBox  = WWPOPN
+Id_SalesDisplayPage_Simulate_Button = X__4683
+Id_MaterialPlan_DateFilter_TextBox = W1PLDT
+Id_MaterialPlan_StatusFilter_TextBox = W1STAT
+Xpath_ProductAvailabilityPage_TotalEntry_Text = //div[@class='grid-canvas grid-canvas-top grid-canvas-left']/div[2]/div[7]
+Xpath_OrderProcessPage_FirstEntry1_Text = //div[contains(@class,'slick-cell l1 r1')]
+Xpath_OrderProcessPage_FirstEntry2_Text = //div[contains(@class,'slick-cell l7 r7')]
+Xpath_OrderProcessPage_FirstEntry3_Text = //div[contains(@class,'slick-cell l8 r8')]
+Xpath_OrderProcessPage_FirstEntry4_Text = //div[contains(@class,'slick-cell l11 r11')]
+Xpath_OrderProcessPage_FirstEntry5_Text = //div[contains(@class,'slick-cell l3 r3')]
+Xpath_OrderProcessPage_FirstEntry6_Text = //div[contains(@class,'slick-cell l0 r0')]
+Xpath_OrderProcessPage_FirstEntry7_Text = //div[contains(@class,'slick-cell l6 r6')]
+Xpath_OrderProcessPage_FirstEntry8_Text = //div[contains(@class,'slick-cell l5 r5')]
+Xpath_OrderProcessPage_FirstEntry9_Text = //div[contains(@class,'slick-cell l4 r4')]
+Xpath_OrderProcessPage_FirstEntry10_Text = //div[contains(@class,'slick-cell l2 r2')]
+Xpath_OrderProcessPage_FirstEntryGiftItem1_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[1]/div[contains(@class,'slick-cell l2 r2')]
+Xpath_OrderProcessPage_FirstEntryGiftItem2_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[2]/div[contains(@class,'slick-cell l2 r2')]
+Xpath_OrderProcessPage_FirstEntryGiftItem3_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[3]/div[contains(@class,'slick-cell l2 r2')]
+Xpath_OrderProcessPage_FirstEntryGiftItem4_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[4]/div[contains(@class,'slick-cell l2 r2')]
+Xpath_OrderProcessPage_FirstEntryGiftItem5_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[5]/div[contains(@class,'slick-cell l2 r2')]
+Xpath_OrderProcessPage_FirstEntryGiftCharge1_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[1]/div[contains(@class,'slick-cell l3 r3')]
+Xpath_OrderProcessPage_FirstEntryGiftCharge2_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[2]/div[contains(@class,'slick-cell l3 r3')]
+Xpath_OrderProcessPage_FirstEntryGiftCharge3_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[3]/div[contains(@class,'slick-cell l3 r3')]
+Xpath_OrderProcessPage_FirstEntryGiftCharge4_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[4]/div[contains(@class,'slick-cell l3 r3')]
+Xpath_OrderProcessPage_FirstEntryGiftCharge5_Text = //div[@class='slick-viewport slick-viewport-top slick-viewport-left']/div/div[5]/div[contains(@class,'slick-cell l3 r3')]
+Id_OrderProcessPage_TransQty_TextBox = R1C6
+Id_OrderProcessPage_Com_TextBox = R1C8
+Xpath_OrderProcessPage_SecondEntry1_Text = //div[@row='1']/div[contains(@class,'slick-cell l2 r2')]
+Id_InvoiceFeePage_ItemNumber_Text = OBITNO
+Id_InvoiceFeePage_SalePrice_Text = WBSAPR
+Id_InvoiceFeePage_NetPrice_Text = WBNEPR
+Id_LineChargesPage_ChargeCode_TextBox = WWCRID
+Id_LineChargesPage_Charge_Text = W7CRAM
+Id_InvoiceFeePage_LineAmount_Text = WBLNAM
+Xpath_OrderProcessPage_Refresh_Button = //button[@class='inforIconButton refresh']
+Id_OrderProcessPage_Actions_Button = ActionsBtn
+Xpath_OrderProcessPage_Settings_Button = //a[@href='#F13']
+Xpath_OrderProcessPage_ConnectPackage_Button = //a[@href='#F10']
+Xpath_OrderProcessPage_ConfirmAll_Button = //a[@href='#F16']
+Xpath_PurchaseOrderPage_OpeningPanel_Button = //div[@id='WWSPICContainer']/button
+Xpath_PurchaseOrderPage_FirstEntry_Button = //ul[@class='ui-autocomplete inforMenuOptions']/li[1]/a
+Xpath_PurchaseOrderPage_SecondEntry_Button = //ul[@class='ui-autocomplete inforMenuOptions']/li[2]/a
+Id_PurchaseOrderPage_OpeningPanel_Dropdown = WWSPIC
+Id_PurchaseOrderPage_Next_Button = Next
+Id_PurchaseOrderPage_PONum_TextBox = WAPUNO
+Xpath_PurchaseOrderPage_DatePick_Icon = //div[@id='WADWDTContainer']/button
+Xpath_PurchaseOrderPage_TodayDatePick_Button = //div[@id='inforDatePicker-div']/div[2]/button
+Id_PurchaseOrderPage_Supplier_TextBox = WASUNO
+Xpath_PurchaseOrderPage_Create_Icon = //div[@id='commandBar']/div[2]/span/button[1]
+Id_PurchaseOrderPage_Town_TextBox = W3TOWN
+Id_PurchaseOrderPage_State_TextBox = W3ECAR
+Id_PurchaseOrderPage_Zip_TextBox = W3PONO
+Id_PurchaseOrderPage_ItemNo_TextBox = WBITNO
+Id_PurchaseOrderPage_Quantity_TextBox = WBORQA
+Id_PurchaseOrderPage_PurchasePrice_TextBox = WBPUPR
+Id_PurchaseOrderPage_AddLineEntry_Button = XT_0106
+Id_CCAuthPage_3rdParty_Text = WA3RDP
+Xpath_M3Text_Exit_Button = //div[@id='pRow19']/div[4]/button
+Xpath_PurchaseOrderPage_CloseTab_Button = //button[@class='inforTabCloseButton']
+Id_PurchaseOrderPage_PONum_Text = WWPUNO
+Xpath_PurchaseOrderPage_POList_Button = //div[@id='WAPUNOContainer']/button
+Id_OrderProcessPage_PackNum_TextBox = W1PANR
+Id_OrderProcessPage_Packaging_TextBox = W1PACT
+Id_OrderProcessPage_PackAdd_Button = WAD74C0
+Id_OrderProcessPage_Previous_Button = Prev
+Id_HomePage_HomeIcon_Button = startDiv
+Xpath_HomePage_Invoice_Menu = //span[@tag='OIS180']
+Id_InvoicePage_COFromNum_TextBox = WFORNO
+Id_InvoicePage_COToNum_TextBox = WTORNO
+Xpath_InvoicePage_Next_Button = //button[@class='inforFormButton default' and @id='Next']
+Id_CustAddress_Name_Text = LBL_L2T8
+Id_CustAddress_Street1_Text = LBL_L2T9
+Id_CustAddress_Street2_Text = LBL_L2T10
+Id_CustAddress_City_Text = LBL_L2T13
+Id_CustAddress_State_Text = LBL_L21T13
+Id_CustAddress_Zip_Text = LBL_L25T13
+Id_CustAddress_Country_Text = LBL_L34T13

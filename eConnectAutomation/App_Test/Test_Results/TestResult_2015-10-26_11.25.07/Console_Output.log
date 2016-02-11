@@ -1,0 +1,36 @@
+******************************START TEST - LeanSwiftPoCScenario.xls / CompleteOrder******************************
+Opening the Firefox driver
+Maximizing the window
+Navigating to the URL: http://54.201.104.110/magento/qa/env-ee-automation
+Clicking the object:Xpath_HomePage_Account_Link
+Clicking the object:Xpath_HomePage_LogIn_Link
+Entering the text: se.automation188@gmail.com in the textbox: Id_LoginPage_UserName_TextBox
+Entering the text: seleniumreads in the textbox: Id_LoginPage_Password_TextBox
+Clicking the object:Id_LoginPage_Login_Button
+Entering the text: chair 10 in the textbox: Id_AccountPage_Search_TextBox
+Clicking the object:Xpath_AccountPage_Search_Button
+Clicking the object:Xpath_SearchResultPage_AddToCart_Button
+Clearing the text field:Xpath_CartPage_Quantity_TextBox
+Entering the text: 1 in the textbox: Xpath_CartPage_Quantity_TextBox
+Clicking the object:Xpath_CartPage_Update_Button
+Clicking the object:Xpath_CheckOutPage_Checkout_Button
+Clicking the object:Id_CheckOutPage_PayCheckMoney_Radio
+Clicking the object:Id_CheckOutPage_PlaceOrder_Button
+Verifying the text of element: Xpath_CommercePage_OrderPlaceConf_Text with expected value: Thank you for your purchase!
+Element's text: THANK YOU FOR YOUR PURCHASE! is matched with expected value: Thank you for your purchase!
+Navigating to the URL: http://54.201.104.110/magento/qa/env-ee-automation/index.php/admin/
+Entering the text: magadmin in the textbox: Id_AdminLoginPage_UserName_TextBox
+Entering the text: Lean5226 in the textbox: Id_AdminLoginPage_Password_TextBox
+Clicking the object:Xpath_AdminLoginPage_Login_Button
+Clicking the object:Xpath_IncomingMessage_Close_Button
+Clicking the object:Xpath_DashboardPage_Sales_Link
+Clicking the object:Xpath_DashboardPage_Orders_Link
+Clicking the object:Name_SalesOrderPage_LastestOrder_Checkbox
+Selecting the input: Sync With ERP in the element: Id_SalesOrderPage_SalesAction_Dropdown
+Clicking the object:Xpath_SalesOrderPage_Submit_Button
+Verifying the text of element: Xpath_SalesOrderPage_InitialStatus_Text with expected value: 33-Order sent to warehouse
+Element's text: Pending is not matched with expected value: 33-Order sent to warehouse
+------------------------------END TEST - LeanSwiftPoCScenario.xls / CompleteOrder------------------------------
+
+
+

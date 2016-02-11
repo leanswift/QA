@@ -1,0 +1,19 @@
+******************************START TEST - VerifyMaterialPlanATP.xls / VerifyMaterialPlanATP******************************
+Opening the Firefox driver
+Clearing temp values
+Maximizing the window
+----------Test Scenario Execution----------
+Navigating to the URL: http://54.201.104.110/magento/qa/env-ee-automation
+Clicking the object:Xpath_HomePage_LogIn_Link
+Element is not currently visible and so may not be interacted with
+Command duration or timeout: 30.08 seconds
+Build info: version: '2.47.2', revision: '4d972c01cab1304452627f837654326a11eb92fe', time: '2015-09-24 09:17:17'
+System info: host: 'Jagadeesh-THINK', ip: '192.168.100.50', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_31'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=41.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: f83473ca-828f-43de-bf0e-cf42567fa4f1
+------------------------------END TEST - VerifyMaterialPlanATP.xls / VerifyMaterialPlanATP------------------------------
+
+
+
+Test execution report sent successfully

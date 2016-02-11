@@ -1,0 +1,101 @@
+Change Log
+----------
+
+12-October-2015 / Changed by Kadhar
+***********************************
+
+OR.txt: Mangento admin object changed
+Keywords.java: Enhanced VerifyElementText function with actual and expected value
+changelog.txt: Created a text file for logging changes in the framework
+Resources: Added chromedriver for supporting test script execution on Chrome
+
+14-October-2015 / Changed by Kadhar
+***********************************
+
+OR.txt: Updated for new script development
+Keywords.java: Created/Updated new/existing keyword functions
+
+15-October-2015 / Changed by Kadhar
+***********************************
+
+Test_Scripts: Each test script xls hold individual scenario
+OR.txt: Updated for new script development
+Keywords.java: Created/Updated new/existing keyword functions
+
+16-October-2015 / Changed by Kadhar
+***********************************
+
+Test_Scripts: Added 3 more test scripts along with driver sheet update
+OR.txt: Updated for new script development
+Keywords.java: Created/Updated new/existing keyword functions
+
+16-October-2015 / Changed by Kadhar
+***********************************
+
+Test_Scripts: Added 1 more test script along with driver sheet update, PoC scenario review comment incorporated
+OR.txt: Updated for new script development
+Keywords.java: Created/Updated new/existing keyword functions
+Constants.java: Added static variable for temporary array list
+
+20-October-2015 / Changed by Kadhar
+***********************************
+
+Test_Scripts: Updated driver sheet and individual test scripts
+OR.txt: Updated for new script development
+Keywords.java: Created/Updated new/existing keyword functions
+
+21-October-2015 / Changed by Kadhar
+***********************************
+
+Test_Scripts: Updated driver sheet and completed all
+OR.txt: Updated for new script development
+Keywords.java: Created/Updated new/existing keyword functions
+
+21-October-2015 / Changed by Kadhar 6.30 PM IST
+***********************************************
+
+Test_Scripts: Updated review comment incorporated test script
+
+22-October-2015 / Changed by Kadhar 2.10 AM IST
+***********************************************
+
+Framework Java Class Files: Framework updated for following enhancements,
+i)Pop up is added when execution is complete
+ii)Added developer comments for code
+iii)Moved hard coded value to constants java class file
+iv)Global parameter handling capability
+v)Provision to comment any step in test script
+vi)Test type execution implement
+Test_Scripts: Updated folder for framework enhancement
+
+Release: Framework V2.0
+
+22-October-2015 / Changed by Kadhar 11.25 AM IST
+***********************************************
+
+Updated framework for batch run issue fix
+
+25-October-2015 / Changed by Kadhar 12.45 PM IST
+***********************************************
+
+Updated framework for html reporting requirement
+
+28-October-2015 / Changed by Kadhar 5.25 PM IST
+***********************************************
+
+Updated framework for html report email
+Review comment incorporation of test scripts, batch run fix - temp var cleanup
+Formatting of code
+
+01-November-2015 / Changed by Kadhar 11.25 PM IST
+*************************************************
+
+Optimized scripts for Firefox and Chrome browser execution
+Developer comment incorporation
+Created a 'doc' folder as placeholder for automation user guide incorporation
+
+02-November-2015 / Changed by Kadhar 11.55 PM IST
+*************************************************
+
+Review comments incorporated for Email report related fixes 
+Updated the user guide documentation
