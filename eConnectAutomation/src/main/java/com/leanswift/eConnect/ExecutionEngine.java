@@ -1,11 +1,14 @@
 //--Declaring the package name space
 package main.java.com.leanswift.eConnect;
 
+import java.io.BufferedInputStream;
 //--Importing necessary java packages
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
@@ -40,9 +43,11 @@ import main.java.com.leanswift.eConnect.Constants;
 import main.java.com.leanswift.eConnect.ExcelFunctions;
 
 //Declaring the java class
-public class ExecutionEngine {
+public class  ExecutionEngine {
 	
 	//Declaring main method - entry point of execution
+	//--Preparing test results folder
+			static String testResultFolder = prepareTestOutputFolder();
 	public static void main(String[] args) {
 		
 		//--Creating objects for helper classes
@@ -52,14 +57,12 @@ public class ExecutionEngine {
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.dateFormat);
 		
-		//--Preparing test results folder
-		String testResultFolder = prepareTestOutputFolder();
 		
 		//--Hashing global variables read from driver sheet
 		setGlobalTestData();
 		
 		//--Opening the test suites sheet from driver workbook
-		excelFns.openSheet(Constants.testScriptsPath, Constants.driverWorkbookName, Constants.testSuitesSheetName);
+		excelFns.openSheet(getPath("testScriptsPath"), Constants.driverWorkbookName, Constants.testSuitesSheetName);
 		
 		//--Repeating the execution for each test suite
 		for (int tssRow = 1; tssRow < excelFns.getRowCount(); tssRow++) {
@@ -73,26 +76,27 @@ public class ExecutionEngine {
 			if(tssRunMode.trim().equalsIgnoreCase(Constants.testSuiteRunFlagYes) && tssTestType.trim().equalsIgnoreCase(keyFns.getDataValue(Constants.testType,Constants.testDataHash))) {
 					
 				//--Opening the test data sheet of particular test suite workbook
-				excelFns.openSheet(Constants.testScriptsPath, testSuiteName, Constants.testDataSheetName);
+				excelFns.openSheet(getPath("testScriptsPath"), testSuiteName, Constants.testDataSheetName);
 				
 				//--Creating test result array based on test data row count
 				Constants.testResultArr = new String[excelFns.getRowCount()-1][Constants.testResultArrColSize];
 				
 				//--Opening the test suite sheet from test suite workbook
-				excelFns.openSheet(Constants.testScriptsPath, testSuiteName, Constants.testSuiteSheetName);
+				excelFns.openSheet(getPath("testScriptsPath"), testSuiteName, Constants.testSuiteSheetName);
 				
 				//--Repeating the execution for each test case
 				for (int tsRow = 1; tsRow < excelFns.getRowCount(); tsRow++) {
 					
-					//--Reading test case name and test run mode from test suite sheet
+					//--Reading test case name, Description and test run mode from test suite sheet
 					String testCaseName = excelFns.getValueFromCell(Constants.testCasesNameCol, tsRow);
+					String testCaseDesc = excelFns.getValueFromCell(Constants.testCasesDescCol, tsRow);
 					String tsRunMode = excelFns.getValueFromCell(Constants.testCasesRunCol, tsRow);
 						
 					//--Checking if test case run mode is yes
 					if(tsRunMode.trim().equalsIgnoreCase("Y")) {
 						
 						//--Opening the test data sheet again of particular test suite workbook
-						excelFns.openSheet(Constants.testScriptsPath, testSuiteName, Constants.testDataSheetName);
+						excelFns.openSheet(getPath("testScriptsPath"), testSuiteName, Constants.testDataSheetName);
 						
 						//--Repeating the test run for each test data row
 						for (int tdRow = 1; tdRow < excelFns.getRowCount(); tdRow++) {
@@ -108,7 +112,7 @@ public class ExecutionEngine {
 								Constants.testDataHash = excelFns.setTestData(tdRow);
 								
 								//--Opening the test case sheet from test suite workbook
-								excelFns.openSheet(Constants.testScriptsPath, testSuiteName, testCaseName);
+								excelFns.openSheet(getPath("testScriptsPath"), testSuiteName, testCaseName);
 									
 								//--Repeating the execution for each test step
 								for (int tcRow = 1; tcRow < excelFns.getRowCount(); tcRow++) {
@@ -124,7 +128,7 @@ public class ExecutionEngine {
 										}
 									}
 									
-									//Converting object name and test data list into arrat for easy access
+									//Converting object name and test data list into array for easy access
 									Object[] paramListObj = new String[paramList.size()];
 									paramListObj = paramList.toArray(paramListObj);
 										
@@ -134,8 +138,16 @@ public class ExecutionEngine {
 										execEng.executeReflectionMethod(Constants.keywordFnsClassQualifier, methodName, paramListObj);
 								}
 									
-								//--Writing test case name, time stamp, test result, screenshot path for tests
+								/* Ignore the Test Suites which contains 'FormFilling' as part of it's name and test Case which contains
+								 * 'Setup" as it's name. As the files with this naming conventions has Test cases for Initial Configurations.
+								 * These Test Cases/Test Suites will be ignored while publishing Test Results.
+								*/
+								if(!(testSuiteName.contains("FormFilling")))
+								if(!(testCaseName.contains("Setup")))
+								{
+									//--Writing test case name, description, time stamp, test result, screenshot path for tests
 								Constants.testResultArr[tdRow-1][Constants.resultArrTestCaseNameCol] = testCaseName;
+								Constants.testResultArr[tdRow-1][Constants.resultArrTestCaseDescCol] = testCaseDesc;
 								Constants.testResultArr[tdRow-1][Constants.resultArrTimeStampCol] = dateFormat.format(new Date());
 								if(Constants.isProceed) {
 									//--Setting blank value to screenshot column if test run passed
@@ -146,13 +158,14 @@ public class ExecutionEngine {
 									Constants.testResultArr[tdRow-1][Constants.resultArrTestResultCol] = Constants.testResultFail;
 									Constants.testResultArr[tdRow-1][Constants.resultArrScreenShotCol] = captureScreenShot(testCaseName, testResultFolder);
 								}
+								}
 								System.out.println("------------------------------END TEST - "+testSuiteName+" / "+testCaseName+"------------------------------");
 								System.out.println("\n\n");
 							}
-							excelFns.openSheet(Constants.testScriptsPath, testSuiteName, Constants.testDataSheetName);
+							excelFns.openSheet(getPath("testScriptsPath"), testSuiteName, Constants.testDataSheetName);
 						}
 					}
-					excelFns.openSheet(Constants.testScriptsPath, testSuiteName, Constants.testSuiteSheetName);
+					excelFns.openSheet(getPath("testScriptsPath"), testSuiteName, Constants.testSuiteSheetName);
 				}
 					
 				//--Removing null rows from test result array
@@ -167,9 +180,11 @@ public class ExecutionEngine {
 					
 				//--Writing test results in results workbook
 				String[][] tunedTestResultArr = testResultList.toArray(new String[][]{});
+				//Ignore Test Suites which contains 'FormFilling' as part of it's name from publishing test results in excel.
+				if(!(testSuiteName.contains("FormFilling")))
 				excelFns.writeTestResult(testResultFolder, testSuiteName, tunedTestResultArr);
 			}
-			excelFns.openSheet(Constants.testScriptsPath, Constants.driverWorkbookName, Constants.testSuitesSheetName);
+			excelFns.openSheet(getPath("testScriptsPath"), Constants.driverWorkbookName, Constants.testSuitesSheetName);
 		}
 		
 		//Publishing HTML report for test execution
@@ -221,12 +236,12 @@ public class ExecutionEngine {
 		} 
 	}
 	
-	public static void setGlobalTestData() {
+	public  static void setGlobalTestData() {
 		ExcelFunctions excelFns = new ExcelFunctions();
 		
 		//--Opening the global variables sheet from driver workbook
-		excelFns.openSheet(Constants.testScriptsPath, Constants.driverWorkbookName, Constants.globalVariablesSheetName);
-		
+		//excelFns.openSheet(getPath("testScriptsPath"), Constants.driverWorkbookName, Constants.globalVariablesSheetName);
+		excelFns.openSheet(getPath("testScriptsPath"), Constants.driverWorkbookName, Constants.globalVariablesSheetName);
 		//Hashing each row present in global variables sheet
 		for (int tstRow = 1; tstRow < excelFns.getRowCount(); tstRow++) {
 			Constants.testDataHash.put(excelFns.getValueFromCell(0, tstRow), excelFns.getValueFromCell(1, tstRow));
@@ -251,20 +266,50 @@ public class ExecutionEngine {
 		return screenShotLocation;
 	}
 	
+	public static String getPath(String path)
+	{
+		Properties prop = new Properties();
+	
+		try {
+			File file = new java.io.File("App_Test/Resources/config.properties");
+			BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+			prop.load(bufferedInputStream);
+			String appTestPath = prop.getProperty("appTest")+"/App_Test";
+			
+			//Check the input path request and return the path accordingly
+			if(path.equals("testScriptsPath"))
+				path = appTestPath + "/Test_Scripts";
+			else if(path.equals("testResultsPath"))
+				path = appTestPath + "/Test_Results";
+			else if(path.equals("ObjectRepository"))
+				path = appTestPath + "/Object_Repository";
+			else if(path.equals("webDriverServerPath"))
+				path = appTestPath + "/Resources/Driver_Servers";
+			else
+				path = appTestPath;
+			} catch(IOException e) {
+			System.out.println(e.getMessage());
+		}
+		return path;
+	  }
+	
 	public static String prepareTestOutputFolder() {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.dateFormat);
 		
 		//--Creating a test result folder for storing output files
-		Constants.testResultFolder = Constants.testResultsPath+"/TestResult_"+dateFormat.format(new Date());
-		File dir = new File(Constants.testResultFolder);
+		String testResultFolder = getPath("testResultsPath") + "/TestResult_"+dateFormat.format(new Date());
+		//Constants.testResultFolder = Constants.testResultsPath+"/TestResult_"+dateFormat.format(new Date());
+		File dir = new File(testResultFolder);
 		dir.mkdir();
 		try {
 			//--Redirecting console output to a file in specified location
-			System.setOut(new PrintStream(new FileOutputStream(Constants.testResultFolder+"/Console_Output.log")));
+			System.setOut(new PrintStream(new FileOutputStream(testResultFolder+"/Console_Output.log")));
 		} catch (FileNotFoundException e) {
+			JOptionPane.showMessageDialog(null, "Invalid Path.Enter the Path where eConnectAutomation Folder is placed or File Seperator should be '/' ");
 			e.printStackTrace();
 		}
-		return Constants.testResultFolder;
+		
+		return testResultFolder;
 	}
 	
 	public static void publishHTMLReport(String[][] testResultArr) {
@@ -273,7 +318,7 @@ public class ExecutionEngine {
 		try {
 			
 			//--Creating a HTML file for displaying test execution report
-			String executionReportFileName = Constants.testResultFolder+"/"+Constants.testReportHTMLName;
+			String executionReportFileName = testResultFolder + "/"+Constants.testReportHTMLName;
 			htmlfile = new FileOutputStream(new File(executionReportFileName));
 			PrintStream printhtml = new PrintStream(htmlfile);
 			
@@ -281,7 +326,7 @@ public class ExecutionEngine {
 			htmlHeader="<html><head><meta charset='utf-8'><title>Test Execution Report</title></head>";
 			
 			//--Setting up HTML body content
-			htmlBody="<body><h1 align='center'>eConnect Automation Report</h1><table align='center' border='1' style='width:75%'><thead><tr><th>SNo.</th><th>Test Case Name</th><th>Time Stamp</th><th>Status</th><th>Failure Screenshot Location</th></thead>";
+			htmlBody="<body><h1 align='center'>eConnect Automation Report</h1><table align='center' border='1' style='width:75%'><thead><tr><th>SNo.</th><th>Test Case Name</th><th>Test Case Description</th><th>Time Stamp</th><th>Status</th><th>Failure Screenshot Location</th></thead>";
 			htmlFooter="</body></html>";
 			for(int arrRow=0; arrRow<testResultArr.length; arrRow++) {
 				int printarrRow = arrRow+1;

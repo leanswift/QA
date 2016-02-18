@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -26,7 +27,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.gargoylesoftware.htmlunit.javascript.host.dom.Document;
+
 import main.java.com.leanswift.eConnect.Constants;
+import main.java.com.leanswift.eConnect.ExecutionEngine;
 
 public class KeywordFunctions {
 
@@ -44,12 +48,20 @@ public class KeywordFunctions {
 		Properties property = new Properties();
 		InputStream is = null;
 		try {
-			is = new FileInputStream(Constants.objectRepoPath+"/OR.txt");
+			//is = new FileInputStream(ExecutionEngine.getPath("ObjectRepository")+"/OR.txt");
+			is = new FileInputStream(ExecutionEngine.getPath("ObjectRepository")+"/OR.txt");
 			property.load(is);
 		} catch(IOException e) {
 			System.out.println(e.getMessage());
 		}
 		return property.getProperty(locatorName);
+	}
+	
+	//Function to get type of a WebElement
+	private String getWebElmentType(String locatorName)
+	{
+		String[] locatorTokens = locatorName.split("_");
+		return locatorTokens[3];
 	}
 	
 	//--Function to get fully qualified locator name
@@ -105,12 +117,12 @@ public class KeywordFunctions {
 			if (browserName.equalsIgnoreCase("Firefox")) {
 				driver = new FirefoxDriver();
 			} else if (browserName.equalsIgnoreCase("chrome")) {
-				System.setProperty("webdriver.chrome.driver", Constants.webDriverServerPath+"/chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", ExecutionEngine.getPath("webDriverServerPath")+"/chromedriver.exe");
 				driver = new ChromeDriver();
 			} else if (browserName.equalsIgnoreCase("IE")) {
 				/*Prerequisite - Go to IE browser -> Settings -> Internet Options -> Security tab -> 
 				Check/Uncheck protected mode uniformly for all zones*/
-				System.setProperty("webdriver.ie.driver", Constants.webDriverServerPath+"/IEDriverServer.exe");
+				System.setProperty("webdriver.ie.driver", ExecutionEngine.getPath("webDriverServerPath")+"/IEDriverServer.exe");
 				DesiredCapabilities dc = new DesiredCapabilities();
 				//dc.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 				dc.setCapability("ie.ensureCleanSession", true);
@@ -143,6 +155,7 @@ public class KeywordFunctions {
 			By locator;
 			locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
 			WebElement element = driver.findElement(locator);
+			//new Actions(driver).moveToElement(element).perform();
 			element.click();
 		} catch (Exception e) {
 			Constants.isProceed = false;
@@ -214,6 +227,30 @@ public class KeywordFunctions {
 		}
 	}
 	
+	//--Function to verify element text with expected value. This method uses getAttribute('value') to fetch value of text box.
+	// This method can be used when the text box is grayed out and when getText method returns no value or fails
+	public void verifyElementTextUsingGetAttribute(String locatorName, String expectedValue)
+	{
+		expectedValue = this.getDataValue(expectedValue, Constants.testDataHash);
+		System.out.println("Verifying the text of element: "+locatorName+" with expected value: "+expectedValue);
+		try {
+			By locator;
+			locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+			WebElement element = driver.findElement(locator);
+			if(element.getAttribute("value").equalsIgnoreCase(expectedValue.trim()))
+				System.out.println("Element's text: "+element.getAttribute("value").trim()+" is matched with expected value: "+expectedValue);
+			else {
+				Constants.isProceed = false;
+				System.out.println("Element's text: "+element.getAttribute("value").trim()+" is not matched with expected value: "+expectedValue);
+			}
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			Constants.isProceed = false;
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
 	//--Function to verify the element text is not equal to expected value
 	public void verifyElementTextNotEquals(String locatorName, String expectedValue) {
 		expectedValue = this.getDataValue(expectedValue, Constants.testDataHash);
@@ -278,6 +315,7 @@ public class KeywordFunctions {
 		}
 	}
 	
+
 	//--Function to store element's text in temp variable
 	public void storeElementText(String locatorName) {
 		System.out.println("Storing the text of element: "+locatorName);
@@ -604,6 +642,7 @@ public class KeywordFunctions {
 			locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
 			WebElement element = driver.findElement(locator);
 			Constants.tempList.add(element.getAttribute("value"));
+			System.out.println(Constants.tempList.get(Constants.tempList.size()-1));
 		} catch (Exception e) {
 			Constants.isProceed = false;
 			System.out.println(e.getMessage());
@@ -618,6 +657,7 @@ public class KeywordFunctions {
 			locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
 			WebElement element = driver.findElement(locator);
 			Constants.tempList.add(element.getText());
+			System.out.println(Constants.tempList.get(Constants.tempList.size()-1));
 		} catch (Exception e) {
 			Constants.isProceed = false;
 			System.out.println(e.getMessage());
@@ -661,6 +701,7 @@ public class KeywordFunctions {
 		try {
 			Constants.tempList.clear();
 			Constants.tempVar="";
+			Constants.appendVar="";
 		} catch (Exception e) {
 			Constants.isProceed = false;
 			System.out.println(e.getMessage());
@@ -711,7 +752,99 @@ public class KeywordFunctions {
 		}
 	}
 	
-	//Application specific functions
+	//Function to check a webElement is not present in a webpage
+	public void elementPresent(String locatorName,String expectedValue)
+	{
+		By locator;
+		expectedValue = this.getDataValue(expectedValue, Constants.testDataHash);
+		System.out.println("Checking whether "+locatorName+" is present");
+	    locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+	     Boolean iselementpresent = (driver.findElements(locator)).size()!= 0;
+			if(Boolean.toString(iselementpresent).equals(expectedValue))
+				System.out.println("Visibility of Element: "+locatorName+" matches with expected value");
+			else
+			{
+				Constants.isProceed = false;
+				System.out.println("Visibility of Element: "+locatorName+" do not match with expected value");
+			}		
+	}
+	
+	//Function to highlight a Webelement in a webpage. Mostly used for debugging purpose
+    public void elementHighlight(String locatorName) {
+    	By locator;
+    	locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+    	WebElement element = driver.findElement(locator);
+    	for (int i = 0; i < 2; i++) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].setAttribute('style', arguments[1]);",element, "color: yellow; border: 3px solid yellow;");
+			js.executeScript("arguments[0].setAttribute('style', arguments[1]);",element, "");
+			}
+    	}
+    
+
+   
+    //Function to get Text from Text box/Labels field and append the values in to a single String
+   public void getAndAppendValues(String locatorName)
+   {
+	   String[] locatorNames=locatorName.split(",");
+		By locators[] = new By[locatorNames.length];
+		
+   	try{
+   		//get values and store it as a single string
+   		for(int i=0;i<locatorNames.length;i++){
+   			locators[i] =locatorValue(this.getLocatorType(locatorNames[i]), this.getLocatorValue(locatorNames[i]));
+   			if(getWebElmentType(locatorNames[i]).equals("Label"))
+   				Constants.appendVar += driver.findElement(locators[i]).getText();
+   			else
+   				Constants.appendVar += driver.findElement(locators[i]).getAttribute("value");
+   		}
+   	}catch(Exception e)
+    	{
+    		Constants.isProceed = false;
+			System.out.println(e.getMessage());
+    	}
+   }
+   
+   //Set the appendVar to empty string
+   public void cleanUpAppendValues()
+   {
+	   Constants.appendVar=""; 
+   }
+   
+   //Function to store the value present in tempList at certain position to temporary variable
+   public void storeValueFromTempList(String posList)
+   {
+	   try{
+	   posList = this.getDataValue(posList, Constants.testDataHash);
+		System.out.println("Store the value present in position: "+posList+" to a temporary variable");
+		int posListNum = Integer.parseInt(posList);
+		Constants.tempVar = Constants.tempList.get(posListNum);
+		System.out.println("Value Stored in Temporary Variable: "+Constants.tempVar);
+	   }catch (Exception e) {
+			Constants.isProceed = false;
+			System.out.println(e.getMessage());
+	   }
+   }
+   
+   //refresh the page
+   public void refreshPage()
+   {
+	   driver.navigate().refresh();
+   }
+   
+   //click ok button in the alert window thrown by a browser
+   public void acceptAlert() {
+	    try {
+	        wait.until(ExpectedConditions.alertIsPresent());
+	        System.out.println("Clicking Ok on the alert window");
+	     driver.switchTo().alert().accept();
+	    } catch (Exception e) {
+	    	driver.switchTo().alert().accept();
+			System.out.println(e.getMessage());
+	    }
+	}
+   
+    //Application specific functions
 	//******************************
 	
 	/*This function is M3H5 client specific to perform contextual click action - right click + keyboard operation such as Control+<numeric>
@@ -737,6 +870,29 @@ public class KeywordFunctions {
 		}
 	}
 	
+	 /*Function to compare Appended String values and values stored in tmp variable by removing white spaces and ",". 
+	  * Specifically used to compare M3 Address with Magento*/
+    public void CompareAppendedValueWithStoredValue(String value)
+    {
+    	Constants.appendVar = this.getDataValue(value, Constants.testDataHash) + Constants.appendVar;
+    	try{
+    		//removing White spaces and "," 
+    		Constants.tempVar = Constants.tempVar.replaceAll("\\s","").replaceAll("," , "").replace("T:", "");
+    		Constants.appendVar = Constants.appendVar.replaceAll("\\s","").replaceAll("," , "");
+    		//Compare values
+    		if(Constants.appendVar.trim().equals(Constants.tempVar.trim()))
+    			System.out.println("Element's text: "+Constants.appendVar.trim()+" matches with expected value: "+Constants.tempVar);
+    		else{
+    			Constants.isProceed = false;
+    			System.out.println("Element's text: "+Constants.appendVar.trim()+" do not matches with expected value: "+Constants.tempVar);
+    		}
+    	}catch(Exception e)
+    	{
+    		Constants.isProceed = false;
+			System.out.println(e.getMessage());
+    	}
+    }
+    
 	/*This function is Magento admin specific that delete all existing records under specific table like locator to add new records thereafter.
 	 * It is used for eConnect form filling scenarios. Button position indicate the column number in which delete button exist.
 	 */
@@ -750,14 +906,46 @@ public class KeywordFunctions {
 			for(int i=2; i < element.size(); i++) {
 				String locatorValue = this.getLocatorValue(locatorName)+"[*]/td["+buttonPosition+"]/button";
 				System.out.println(locatorValue);
-				if(driver.findElement(By.xpath(locatorValue)).isDisplayed())
-					driver.findElement(By.xpath(locatorValue)).click();
+				WebElement locator_element = driver.findElement(By.xpath(locatorValue));
+				if(locator_element.isDisplayed()){
+					locator_element.sendKeys("");
+					locator_element.click();
+					}
 			}
 		} catch (Exception e) {
 			Constants.isProceed = false;
 			System.out.println(e.getMessage());
 		}
 	}
+
+	
+    //Function to Expand the head nodes if it is in collapsed state. Magento Admin specific function.
+    public void expandHeadNode(String locatorName)
+    {
+		try {
+			By locator1,locator2;
+			String locatorName1,locatorName2;
+			//Split and Store 2 locator Names in each variable
+			String[] locators = locatorName.split(",");
+			locatorName1=locators[0];
+			locatorName2=locators[1];
+			System.out.println("Checking if Head "+locatorName1+" is expanded");
+			
+			locator1 = locatorValue(this.getLocatorType(locatorName1), this.getLocatorValue(locatorName1));
+			locator2 = locatorValue(this.getLocatorType(locatorName2), this.getLocatorValue(locatorName2));
+			WebElement locator_element = driver.findElement(locator2);
+			//check whether first element under Head Node is displayed
+			if(!locator_element.isDisplayed()){
+				driver.findElement(locator1).click();
+				System.out.println("Expanding Head Node "+locatorName1);
+			}
+			else
+				System.out.println("Head Node "+locatorName1+ " is already expanded");
+		} catch (Exception e) {
+			Constants.isProceed = false;
+			System.out.println(e.getMessage());
+		}
+    }
 	
 	/*This function is used to append a 4 digit random number to a static email address to represent an unique email id during new customer registration
 	 * in Magento user portal. It generates a random email address and input in text field object.
@@ -817,5 +1005,6 @@ public class KeywordFunctions {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	
 }

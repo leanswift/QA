@@ -95,19 +95,26 @@ public class ExcelFunctions {
 			}
 			//--Creating new test result sheet for individual modules
 			int numSheet = wWorkbook.getNumberOfSheets();
+			/* Test Suites which contains Form Filling in it's name don't get included in Test Reports. 
+			As these suites and it's cases comes under basic Configuration of a product
+			*/
+			
 			wSheet = wWorkbook.createSheet(testSuiteName, numSheet+1);
 			//--Creating column header name and view for test result sheet
 			Label testCaseNameHeader = new Label(0,0,Constants.testResultHeaderColumn1);
 			wSheet.setColumnView(0, 16);
-			Label timeStampHeader = new Label(1,0,Constants.testResultHeaderColumn2);
-			wSheet.setColumnView(1, 26);
-			Label testStatusHeader = new Label(2,0,Constants.testResultHeaderColumn3);
-			wSheet.setColumnView(2, 12);
-			Label failScreenShotHeader = new Label(3,0,Constants.testResultHeaderColumn4);
-			wSheet.setColumnView(3, 130);
+			Label testCaseDescHeader = new Label(1,0,Constants.testResultHeaderColumn2);
+			wSheet.setColumnView(1, 110);
+			Label timeStampHeader = new Label(2,0,Constants.testResultHeaderColumn3);
+			wSheet.setColumnView(2, 26);
+			Label testStatusHeader = new Label(3,0,Constants.testResultHeaderColumn4);
+			wSheet.setColumnView(3, 12);
+			Label failScreenShotHeader = new Label(4,0,Constants.testResultHeaderColumn5);
+			wSheet.setColumnView(4, 130);
 			try {
 				//--Writing column header name with view settings in test result sheet
 				wSheet.addCell(testCaseNameHeader);
+				wSheet.addCell(testCaseDescHeader);
 				wSheet.addCell(timeStampHeader);
 				wSheet.addCell(testStatusHeader);
 				wSheet.addCell(failScreenShotHeader);
@@ -120,9 +127,11 @@ public class ExcelFunctions {
 						wSheet.addCell(arrData);
 					}
 				}
+			
 			} catch (WriteException e) {
 				e.printStackTrace();
 			}
+		 
 			wWorkbook.write();
 			wWorkbook.close();
 		} catch (IOException e) {
