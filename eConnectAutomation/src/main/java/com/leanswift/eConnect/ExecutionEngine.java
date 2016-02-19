@@ -317,7 +317,6 @@ public class  ExecutionEngine {
 		try {
 			FileUtils.cleanDirectory(new File(getPath("testResultsPath")));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
