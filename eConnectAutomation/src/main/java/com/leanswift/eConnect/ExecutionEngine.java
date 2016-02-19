@@ -295,10 +295,10 @@ public class  ExecutionEngine {
 	
 	public static String prepareTestOutputFolder() {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.dateFormat);
-		
+		//delete all the TestOutput Folders present inside Test Results folder
+		deleteTestOutputFolders();
 		//--Creating a test result folder for storing output files
 		String testResultFolder = getPath("testResultsPath") + "/TestResult_"+dateFormat.format(new Date());
-		//Constants.testResultFolder = Constants.testResultsPath+"/TestResult_"+dateFormat.format(new Date());
 		File dir = new File(testResultFolder);
 		dir.mkdir();
 		try {
@@ -310,6 +310,16 @@ public class  ExecutionEngine {
 		}
 		
 		return testResultFolder;
+	}
+	
+	public static void deleteTestOutputFolders()
+	{
+		try {
+			FileUtils.cleanDirectory(new File(getPath("testResultsPath")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public static void publishHTMLReport(String[][] testResultArr) {
