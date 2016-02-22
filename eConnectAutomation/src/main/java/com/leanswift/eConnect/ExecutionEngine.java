@@ -315,6 +315,7 @@ public class  ExecutionEngine {
 	public static void deleteTestOutputFolders()
 	{
 		try {
+			//clean files and folder
 			FileUtils.cleanDirectory(new File(getPath("testResultsPath")));
 		} catch (IOException e) {
 			e.printStackTrace();
