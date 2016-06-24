@@ -75,5 +75,7 @@ public class Constants {
 	public static String mailSocketClass = "mail.smtp.socketFactory.class";
 	public static String mailFallBack = "mail.smtp.socketFactory.fallback";
 	public static String mailProtocol = "smtp";
+	public static int incrementer = 0;
+	public static int loopCount;
 
 }

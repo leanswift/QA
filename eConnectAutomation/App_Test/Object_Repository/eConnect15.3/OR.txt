@@ -162,7 +162,9 @@ Xpath_ManageProductsPage_ProductQuantity_Text = //table[@id='productGrid_table']
 Xpath_ProductsPage_ProductPrice_Text = //table[@id='productGrid_table']/tbody/tr/td[8]
 Xpath_ScheduleConfigurationPage_UpdateStock_Checkbox = //input[@value='leanswift_update_stock']
 Xpath_ScheduleConfigurationPage_leanswiftConfig_Checkbox = //input[@value='leanswift_config']
-Id_ScheduleConfigurationPage_UpdateStockActions_Dropdown = cron_grid_massaction-select
+Xpath_ScheduleConfigurationPage_SalesRepUserCreation_Checkbox = //input[@value='leanswift_salesrep_user_creation']
+Xpath_ScheduleConfigurationPage_SalesRepM3Sync_Checkbox = //input[@value='leanswift_salesrep_m3_sync']
+Id_ScheduleConfigurationPage_UpdateStockActions_Dropdown = job_grid_massaction-select
 Xpath_ScheduleConfigurationPage_Submit_Button = //button[@title='Submit' and @type='button']
 Xpath_ScheduleConfigurationPage_JobRunSuccess_Text = //li[@class='success-msg']/ul/li/span
 Id_ConfigurationsPage_LeanSwift_Image = leanswift_logo
@@ -198,6 +200,17 @@ Xpath_Order_GiftOptionsLine_Link = //a[contains(@id,'gift_options_link')]
 Xpath_Order_GiftOptionsPopUp_Text = //div[@id='wrapping-item-container']/h4
 Xpath_Order_GiftOptionsPopUpOK_Button = //button[@id='gift_options_ok_button']
 Xpath_ProductsPage_ProductQuantity_Text = //table[@id='productGrid_table']/tbody/tr/td[9]
+Xpath_DashboardPage_ManageSalesRep_Link = //ul[@id='nav']/li[4]/ul/li[3]/a/span
+Xpath_UsersPage_FirstUserName_Text = //table[@id='permissionsUserGrid_table']/tbody/tr/td[2]
+Id-UserPage_Password_TextBox = user_password
+Id-UserPage_ConfirmPassword_TextBox = user_confirmation
+Id_UserPage_UserRole_Link = page_tabs_roles_section
+Xpath_UserRolePage_SalesRep_RadioButton = //table[@id='permissionsUserRolesGrid_table']/tbody/tr[2]/td[1]/input
+Xpath_UserPage_SaveUser_Button = //button[@type='button' and @title='Save User']
+Id_SalesRepPage_RepresentativeCode_TextBox = id_filter_rep_code
+Xpath_SalesRepPage_FirstRepresentativeCode_Text = //table[@id='id_table']/tbody/tr/td[3]
+Id_UsersPage_UserName_TextBox = permissionsUserGrid_filter_username
+Xpath_UsersPage_FirstUserName_Text = //table[@id='permissionsUserGrid_table']/tbody/tr[1]/td[2]
 
 //Manage Customer's Page
 Xpath_ManageCustomersPage_Customer_CheckBox = //table[@id='customerGrid_table']/tbody/tr[1]/td[1]/input
@@ -229,6 +242,10 @@ Xpath_AddressesPage_ERPAddrType2_TextBox = //div[3]/div[3]/div[2]/div/table/tbod
 Xpath_AddressesPage_ERPAddrId2_TextBox = //div[3]/div[3]/div[2]/div/table/tbody/tr[16]/td[2]/input
 Xpath_AddressesPage_ERPAddrType3_TextBox = //div[3]/div[4]/div[2]/div/table/tbody/tr[15]/td[2]/input
 Xpath_AddressesPage_ERPAddrId3_TextBox = //div[3]/div[4]/div[2]/div/table/tbody/tr[16]/td[2]/input
+Xpath_DashboardPage_Permissions_Link = //ul[@id='nav']/li[9]/ul/li[12]/a/span
+Xpath_DashboardPage_Users_Link = //ul[@id='nav']/li[9]/ul/li[12]/ul/li[1]/a/span
+Id_CustomerPage_ERPData_Link = customer_info_tabs_ERP Data
+Id_ERPDataPage_SalesRep_TextBox = sales_rep
 
 //eConnect Configuration
 Xpath_eConnectPage_eConnect_HeaderText = //ul[@id='system_config_tabs']/li[7]/dl/dd/a/span

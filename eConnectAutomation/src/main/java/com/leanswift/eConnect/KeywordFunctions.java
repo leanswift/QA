@@ -48,7 +48,6 @@ public class KeywordFunctions {
 		Properties property = new Properties();
 		InputStream is = null;
 		try {
-			//is = new FileInputStream(ExecutionEngine.getPath("ObjectRepository")+"/OR.txt");
 			is = new FileInputStream(ExecutionEngine.getPath("ObjectRepository")+"/OR.txt");
 			property.load(is);
 		} catch(IOException e) {
@@ -81,7 +80,7 @@ public class KeywordFunctions {
 			by = By.cssSelector(locatorValue);
 			break;
 		case "LINKTEXT":
-			locatorValue = this.getDataValue(locatorValue, Constants.testDataHash);
+			//locatorValue = this.getDataValue(locatorValue, Constants.testDataHash);
 			by = By.linkText(locatorValue);
 			break;
 		case "PARTIALLINKTEXT":
@@ -155,7 +154,6 @@ public class KeywordFunctions {
 			By locator;
 			locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
 			WebElement element = driver.findElement(locator);
-			//new Actions(driver).moveToElement(element).perform();
 			element.click();
 		} catch (Exception e) {
 			Constants.isProceed = false;
@@ -844,6 +842,27 @@ public class KeywordFunctions {
 	    }
 	}
    
+   public void verifyDropDownValue(String locatorName, String expectedValue)
+  	{
+  		expectedValue = this.getDataValue(expectedValue, Constants.testDataHash);
+  		System.out.println("Verifying the text of element: "+locatorName+" with expected value: "+expectedValue);
+  		try {
+  			By locator;
+  			locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+  			Select select = new Select(driver.findElement(locator));
+  			if( select.getFirstSelectedOption().getText().equalsIgnoreCase(expectedValue.trim()))
+  				System.out.println("Element's text: "+select.getFirstSelectedOption().getText().trim()+" is matched with expected value: "+expectedValue);
+  			else {
+  				Constants.isProceed = false;
+  				System.out.println("Element's text: "+select.getFirstSelectedOption().getText().trim()+" is not matched with expected value: "+expectedValue);
+  			}
+  			
+  		} catch (Exception e) {
+  			Constants.isProceed = false;
+  			System.out.println(e.getMessage());
+  		}
+       }
+   
     //Application specific functions
 	//******************************
 	
@@ -1005,6 +1024,144 @@ public class KeywordFunctions {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	    //-------------------MARKETPLACE SUPPORT------------------
+	
+		//CLick multiple elements with same identifier at once
+		public void clickMultipleObjects(String locatorName) {
+			System.out.println("Clicking the object:" +locatorName);
+			try {
+				By locator;
+				locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+				List <WebElement> element =  driver.findElements(locator);
+				for(WebElement elem : element)
+				{
+					System.out.println(elem);
+					elem.click();
+				}
+					
+			} catch (Exception e) {
+				Constants.isProceed = false;
+				System.out.println(e.getMessage());
+			}
+
+		}
+		
+		//Input same value into multiple text fields with same identifier
+		public void inputTextInMultipleFields(String locatorName, String textValue) {
+			textValue = this.getDataValue(textValue, Constants.testDataHash);
+			System.out.println("Entering the text: "+textValue+" in the textbox: "+locatorName);
+			try {
+				By locator;
+				locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+				List <WebElement> element = driver.findElements(locator);
+				for(WebElement elem : element)
+				{
+				elem.clear();
+				elem.sendKeys(textValue);
+				}
+			} catch (Exception e) {
+				Constants.isProceed = false;
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		//This will set a value to a loopCount variable same as count of locator present in the a webpage
+		public void startLoop(String locatorName)
+		{
+			System.out.println("getting loop count ...");
+			try {
+				By locator;
+				locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+				List <WebElement> element =  driver.findElements(locator);
+				Constants.loopCount = element.size();				
+			} catch (Exception e) {
+				Constants.isProceed = false;
+				System.out.println(e.getMessage());
+			}
+			
+		}
+		
+		//This will store the element with same name in a list and click one after other when it is called
+		public void clickObjectWithSameName(String locatorName)
+		{
+			System.out.println("Clicking the object:" +locatorName);
+			try {
+				By locator;
+				locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+				List <WebElement> element =  driver.findElements(locator);
+				WebElement elem =  element.get(Constants.incrementer);
+					System.out.println(elem);
+					elem.click();			
+			} catch (Exception e) {
+				Constants.isProceed = false;
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		// This method is used to click the same web-element multiple times as specified
+		public void clickObjectMultipleTimes(String locatorName, String textValue)
+		{
+			System.out.println("Clicking the object:" +locatorName);
+			try {
+				By locator;
+				int count = Integer.parseInt(this.getDataValue(textValue, Constants.testDataHash));
+				locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
+				WebElement element = driver.findElement(locator);
+				System.out.println(element);
+				for(int i =0; i < count; i ++){
+					
+				element.click();
+				}
+			} catch (Exception e) {
+				Constants.isProceed = false;
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		//This method is to input different values in various text boxes
+		public void inputTextDiffValuesInMultipleFields(String locatorName, String textValue)
+		{
+			textValue = this.getDataValue(textValue, Constants.testDataHash);
+			String[] textValuearr = textValue.split(",");
+			try {
+				By locator;
+				for(int i =0; i < Integer.parseInt(Constants.tempVar); i++)
+				{
+					locator = locatorValue(this.getLocatorType(locatorName), this.getDynamicLocatorValue(locatorName,i));
+					WebElement element = driver.findElement(locator);
+					System.out.println("Entering the text: "+textValue+" in the textbox: "+locatorName);
+					element.sendKeys(textValuearr[i]);
+				}
+				
+			} catch (Exception e) {
+				Constants.isProceed = false;
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		//This method is a generic one. Can be used to store a value specified from text Scripts
+		public void storeValue(String textValue){
+			textValue = this.getDataValue(textValue, Constants.testDataHash);
+			Constants.tempVar = textValue;
+		}
+		
+		//If some part of the web-element locator is changing, you can use this method to generate the locators dynamically
+		// by giving increment id
+		public String getDynamicLocatorValue(String locatorName,int i){
+				Properties property = new Properties();
+			InputStream is = null;
+			try {
+			
+				is = new FileInputStream(ExecutionEngine.getPath("ObjectRepository")+"/OR.txt");
+				property.load(is);
+			} catch(IOException e) {
+				System.out.println(e.getMessage());
+			}
+			locatorName = property.getProperty(locatorName);
+			return locatorName + String.valueOf(i);
+		}
+
 
 	
 }

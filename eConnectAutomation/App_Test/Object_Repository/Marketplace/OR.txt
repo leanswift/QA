@@ -1,0 +1,114 @@
+//--OBJECT REPOSITORY (read and parsed as PROPERTY file from Keyword Functions)
+//-----------------------------------------------------------------------------
+
+//LeanSwift - Marketplace User
+//------------------------
+
+LinkText_HomePage_Login_link = Log In
+LinkText_loginPage_Register_link = Register
+Id_createAccountPage_FirstName_TextBox = firstname
+Id_createAccountPage_LastName_TextBox = lastname
+Id_createAccountPage_EmailAddress_TextBox = email_address
+Id_createAccountPage_Company_TextBox = company
+Id_createAccountPage_Password_TextBox = password
+Id_createAccountPage_ConfirmPassword_TextBox = password-confirmation
+Id_createAccountPage_Industry_Dropdown = company_industry
+Xpath_createAccountPage_Register_Button = //button[@title='Register' and @type='submit']
+
+//Login page
+//----------------
+
+Id_LoginPage_Email_TextBox = email
+Id_LoginPage_password_TextBox = pass
+Id_LoginPage_SignIn_Button = send2
+
+//Company Profile Page
+//-----------------------
+LinkText_AccountPage_CompanyProfile_link = Company Profile
+Id_CompanyProfilePage_Company_TextBox = company_name
+Id_CompanyProfilePage_Industry_Dropdown = company_industry
+Id_CompanyProfilePage_PrimaryContactName_TextBox = primary_contact_name
+Id_CompanyProfilePage_PrimaryEmail_TextBox = primary_contact_email
+
+
+//Address BOOK
+//---------------
+LinkText_AccountPage_AddressBook_link = Address Book
+LinkText_AddressBookPage_ManageAddress_link = Manage Addresses
+Id_AddressBookPage_telephone_TextBox = telephone
+Id_AddressBookPage_Street1_TextBox = street_1
+Id_AddressBookPage_Street2_TextBox = street_2
+Id_AddressBookPage_City_TextBox = city
+Id_AddressBookPage_Region_Dropdown = region_id
+Id_AddressBookPage_Zip_TextBox = zip
+Id_AddressBookPage_Country_Dropdown = country
+Xpath_AddressBookPage_SaveAddress_Button = //button[@title='Save Address' and @type='submit']
+
+
+//Discover Page
+//---------------
+Xpath_DiscoverPage_AddtoCart_Button = //button[@title='Add to Cart' and @type='submit']
+Xpath_DiscoverPage_Cart_Button = //div[@class='minicart-wrapper']/a
+LinkText_DiscoverPage_EditCart_Button = Edit Cart
+CSS_AccountPage_Discover_Link = #ui-id-3 > span
+Xpath_DiscoverPage_POD_Image = //img[@alt='License for Proof Of Delivery']
+Xpath_DiscoverPage_CI_Image = //img[@alt='License for Customer Information']
+Xpath_DiscoverPage_MO_Image = //img[@alt='License for MO Verification']
+Xpath_DiscoverPage_PR_Image = //img[@alt='License for Pick Reporting']
+Id_CheckoutPage_qty_TextBox = qty
+Id_CheckoutPage_AddtoCart_Button = product-addtocart-button
+Xpath_CheckoutPage_Cart_Image = //html/body/div[1]/header/div[5]/div[1]/a
+Id_CheckoutPage_Checkout_Button = top-cart-btn-checkout
+
+//Enable Page
+LinkText_AccountPage_Enable_Link = Enable
+Xpath_EnablePage_eLinkCEViewDetails_Button = //button[@class='mp-button-inactive' and @type='submit']
+Id_eLinkCEPage_Addtocart_button = product-addtocart-button
+
+//Header
+Id_header_proceedtocheckout_button = //button[@type='button' and @title='Go to Checkout']
+LinkText_Header_MyAccount_link = My Account
+
+//checkout page
+//----------------------------
+Id_PaymentPage_CreditcardNo_TextBox = authorizenet_directpost_cc_number
+Id_PaymentPage_Month_Dropdown = authorizenet_directpost_expiration
+Id_PaymentPage_Year_Dropdown = authorizenet_directpost_expiration_yr
+Xpath_PaymentPage_PlaceOrder_Button = //button[@type='submit' and @title='Place Order']
+LinkText_OrderSuccessPage_Gotomylicense_button = Go to My Licenses
+
+//Edit Cart Page
+//------------------------------
+Xpath_EditCartPage_qty_TextBox = //input[@class='input-text qty' and @type='number']
+Xpath_EditCartPage_updateCart_Button = //button[@title='Update Cart' and  @value='update_qty']
+Xpath_EditCartPage_ProccedtoCheckout_Button = //button[@title='Proceed to Checkout' and @type='button']
+
+//pop up
+//----------
+Id_popup_email_textbox = email
+Id_popup_password_textbox = pass
+Id_popup_signin_button = send2
+
+//Account page
+LinkText_AccountPage_MyLicense_link = My Licenses
+LinkText_AccountPage_eLInkConfig_Link = eLink Config
+
+//My license & manage license page
+LinkText_MyLicensePage_Manage_link = Manage
+Id_ManageLicensePage_addrow_button = addrow
+Id_ManageLicensePage_UserEmail_TextBox = txtUserId_
+Id_ManageLicensePgae_SaveAll_Button = btnSubmit
+LinkText_ManageLicensePage_Back_Button = << Back
+LinkText_ManageLIcensePage_Emailpwd_link = Email Password
+
+//eLink Config page
+LinkText_eLinkConfigPage_eLinkService_link = eLink Service
+Id_eLinkConfigPage_hostname_textbox = configuration['mainHostName']
+Id_eLinkConfigPage_eLinkName_Dropdown = mainlinkname
+Id_eLinkConfigPage_port_textbox = configuration['mainPort']
+Xpath_eLinkConfigPage_submit_button = //button[@title='Submit' and @type='submit']
+Id_eLinkConfigPage_testConnection_button = test_main
+Xpath_eLinkConfigPage_reteriveConfiguration_button = //button[@type='button' and @title='Retrieve Configuration']
+
+//Account Dashboard
+Xpath_AccountDashPage_orderStatus_Text = //table[@id='my-orders-table']/tbody/tr[1]/td[4]
