@@ -97,6 +97,7 @@ LinkText_AccountPage_eLInkConfig_Link = eLink Config
 LinkText_MyLicensePage_Manage_link = Manage
 Id_ManageLicensePage_addrow_button = addrow
 Id_ManageLicensePage_UserEmail_TextBox = txtUserId_
+Id_ManageLicensePage_clear_Button = btnClear_
 Id_ManageLicensePgae_SaveAll_Button = btnSubmit
 LinkText_ManageLicensePage_Back_Button = << Back
 LinkText_ManageLIcensePage_Emailpwd_link = Email Password

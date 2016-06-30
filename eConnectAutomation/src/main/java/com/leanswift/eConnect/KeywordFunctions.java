@@ -1162,6 +1162,24 @@ public class KeywordFunctions {
 			return locatorName + String.valueOf(i);
 		}
 
+		//This method is to click different different elements with dynamic ID
+				public void clickDynamicElement(String locatorName)
+				{
+					try {
+						By locator;
+						for(int i =0; i < Integer.parseInt(Constants.tempVar); i++)
+						{
+							locator = locatorValue(this.getLocatorType(locatorName), this.getDynamicLocatorValue(locatorName,i));
+							WebElement element = driver.findElement(locator);
+							System.out.println("Clicking the object: "+locatorName);
+							element.click();
+						}
+						
+					} catch (Exception e) {
+						Constants.isProceed = false;
+						System.out.println(e.getMessage());
+					}
+				}
 
 	
 }
