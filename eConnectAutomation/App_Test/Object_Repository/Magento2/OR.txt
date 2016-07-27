@@ -1,16 +1,39 @@
-//--OBJECT REPOSITORY (read and parsed as PROPERTY file from Keyword Functions)
+﻿//--OBJECT REPOSITORY (read and parsed as PROPERTY file from Keyword Functions)
 //-----------------------------------------------------------------------------
+
 
 //LeanSwift - Magento User
 //------------------------
 
+
 Xpath_HomePage_Account_Link = //a[@class='skip-link skip-account']
 Xpath_HomePage_MyAccount_Link = //a[@title='My Account']
-Xpath_HomePage_Register_Link = //html/body/div[1]/header/div[1]/div/ul/li[3]/a
+Xpath_HomePage_Register_Link = //html/body/div/header/div[1]/div/ul/li[3]/a
+Xpath_HomePage_Create_Link = //html/body/div[1]/header/div[1]/div/ul/li[3]/a
+LinkText_HomePage_LogIn_Link = Sign In
+
+
+//Login page
+//----------------
+
+
+Id_LoginPage_Email_TextBox = email
+Id_LoginPage_password_TextBox = pass
+Id_LoginPage_SignIn_Button = send2
+
+
+
+
+//html/body/div[1]/header/div[1]/div/ul/li[3]/a
 Xpath_HomePage_LogIn_Link = //a[@title='Log In']
 Xpath_HomePage_LogOut_Link = //a[@title='Log Out']
 LinkText_HomePage_MyAccount_Link = My Account
-Xpath_MyAccountPage_AddressBook_Link = //div[@id='block-collapsible-nav']/ul/li[3]/strong
+LinkText_HomePage_Create_Link = Create an Account
+
+
+Xpath_MyAccountPage_AddressBook_Link = //div[@id='block-collapsible-nav']/ul/li[3]/a
+Xpath_AddressBook_Link = //div[@id='block-collapsible-nav']/ul/li[3]/a
+//div[@id='block-collapsible-nav']/ul/li[3]/strong
 Xpath_AccountPage_AddressBookBillingAddr_Text = //div[@class='col2-set addresses-list']/div[1]/ol/li[1]/address
 Xpath_AccountPage_AddressBookShippingAddr_Text = //div[@class='col2-set addresses-list']/div[1]/ol/li[2]/address
 Xpath_AccountPage_AdditionalAddr1_Text = //div[@class='col2-set addresses-list']/div[2]/ol/li[1]/address
@@ -43,10 +66,25 @@ Id_ViewDetailsPage_GiftRecipientName_TextBox = giftcard_recipient_name
 Id_ViewDetailsPage_GiftMessage_TextBox = giftcard_message
 Id_ViewDetailsPage_GiftCardQuantity_TextBox = qty
 Xpath_AccountPage_Search_Button = //button[@class='action search']
+//LinkText_SearchResultPage_AddToCart_Button = Add to Cart
 Xpath_SearchResultPage_AddToCart_Button = //button[@id='product-addtocart-button']
+Xpath_Header_MyCart_Icon = //html/body/div/header/div[2]/div[1]/a
+//button[@id='product-addtocart-button']
 Xpath_CartPage_Quantity_TextBox = //input[@class='input-text qty']
 Xpath_CartPage_Update_Button = //table[@id='shopping-cart-table']/tfoot/tr/td/button[3]
+Xpath_CheckOutPage_Button = //div[@class='minicart-wrapper']/a
+//html/body/div[1]/header/div[2]/div[1]/a/span[2]/span[1]
 Xpath_CheckOutPage_Checkout_Button = //div[@id='shipping-method-buttons-container']/div/button
+Xpath_GotoCheckout_Button = //button[@title='Go to Checkout' and @data-role='proceed-to-checkout' and @type='button']
+//LinkText_ProccedtoCheckout_Button = Proceed to Checkout
+Xpath_ProceedtoCheckout_Button = //button[@title='Proceed to Checkout' and @data-role='proceed-to-checkout' and @type='button']
+//div[@id='shipping-method-buttons-container']/div/button
+LinkText_ViewandEdit_Cart = View and edit cart
+Xpath_ViewandEdit_Cart = //div/a[@class='action viewcart']
+Xpath_ClickCart = //div[@class='minicart-wrapper']/a
+//html/body/div[1]/header/div[2]/div[1]/a
+//div[@id='minicart-content-wrapper']/div[2]/div[5]/div/a/span/span
+Xpath_Proceed = 
 Id_CheckOutPage_PayCheckMoney_Radio = cashondelivery
 Id_CheckOutPage_PayCreditCard_Radio = p_method_ccsave
 Xpath_CheckOutPage_BillingInfoContinue_Button = //div[@id='billing-buttons-container']/button
@@ -58,13 +96,16 @@ Id_CheckOutPage_CCNumber_TextBox = ccsave_cc_number
 Id_CheckOutPage_CCExpMonth_DropDown = ccsave_expiration
 Id_CheckOutPage_CCExpYear_DropDown = ccsave_expiration_yr
 Id_CheckOutPage_CCCCVNumber_TextBox = ccsave_cc_cid
-Xpath_CheckOutPage_PlaceOrder_Button = //button[type='submit' and title='Place Order']
-Xpath_CheckOutPage_PlaceOrder_Button = //div[@id='review-buttons-container']/button[@class='button btn-checkout']
+Xpath_Placeorder_Button = //button[@type='submit' and @title='Place Order' and @class='action primary checkout']
+LinkText_PlaceOrder_Button = Place Order
+Xpath_CheckOutPage_PlaceOrder_Button = //button[@type='submit' and @title='Place Order']
+//Xpath_CheckOutPage_PlaceOrder_Button = //div[@id='review-buttons-container']/button[@class='button btn-checkout']
 Id_CheckOutPage_Comments_TextArea = comments
-Id_CheckOutPage_ShipComplete_Checkbox = shipcomplete
+Id_CheckOutPage_ShipComplete_Checkbox = ship_complete
 Xpath_CommercePage_OrderPlaceConf_Text = //main[@id='maincontent']/div[3]/div/div[2]/p[1]
-Xpath_CartPage_Tax_Text = //table[@id='shopping-cart-totals-table']/tfoot/tr[3]/td[2]/span
-Xpath_CheckoutPage_Tax_Text = //div[@id='aw-onestepcheckout-review-table-cart-wrapper']/table/tfoot/tr[5]/td[2]/span
+Xpath_CartPage_Tax_Text = //table[@class='data table totals']/tbody/tr[@class='totals-tax']/td/span
+//table[@id='shopping-cart-totals-table']/tfoot/tr[3]/td[2]/span
+Xpath_Checkout_Tax_Text = //div[@id='opc-sidebar']/div[1]/table/tbody/tr[3]/td/span = //div[@id='aw-onestepcheckout-review-table-cart-wrapper']/table/tfoot/tr[5]/td[2]/span
 Xpath_CheckoutPage_ShippingFee_Text = //div[@id='aw-onestepcheckout-review-table-cart-wrapper']/table/tfoot/tr[2]/td[2]/span
 Xpath_SearchResultPage_Chair5_Link = //h2[@class='product-name']/a[@title='Chair 5']
 Id_ProductPage_Chair5Price_Text = product-price-9
@@ -73,13 +114,17 @@ Id_CheckOutPage_GiftCardCode_TextBox = enterprise_giftcard_code
 Id_CheckOutPage_AddGiftCard_Button = aw-onestepcheckout-enterprise-giftcard-apply-btn
 Xpath_ProductPage_ATPDate_Text = //li[@class='atp_details atp_date_detail']/span[2]
 Xpath_ProductPage_ATPQty_Text = //li[@class='atp_details atp_qty_detail']/span[2]
+Xpath_ProductPage_Color_Attribute=//div[@class='swatch-attribute color']/div/div
+Xpath_ProductPage_Size_Attribute=//div[@class='swatch-attribute size']/div/div
 Id_CheckoutPage_GiftOptions_Checkbox = allow_gift_options
 Id_CheckoutPage_GiftOptionsEntireOrder_Checkbox = allow_gift_options_for_order
 Id_CheckoutPage_GiftOptionsIndvidualItems_Checkbox = allow_gift_options_for_items
 Xpath_CheckoutPage_GiftWrapDesign_dropdown = //select[contains(@id,'giftwrapping')]
 Xpath_CheckoutPage_GiftWrapDesignforIndvItems_dropdown = //div[contains(@id,'options-items-container')]/div/select
 Xpath_MyOrdersPage_Header_Text= div[@class='main']/div[2]/div[3]/div[1]/h1
+Xpath_CheckoutPage_Tax_Text=//table[@class='data table table-totals']/tbody/tr[@class='totals-tax']/td/span
 Id_MyOrdersPage_MagentoOrders_Button = magento
+Id_ShippingAddrPage_ShippingMethod_RadioButton = s_method_flatrate_flatrate
 Xpath_MagentoOrdersPage_Header_Text = div[@class='main']/div[2]/div[2]/div[1]/h1
 Xpath_MagentoOrdersPage_ViewOrder_Link = //table[@id='my-orders-table']/tbody/tr/td[6]/span/a[1]
 Xpath_ViewOrdersPage_Header_Text = //div[@class='main']/div[2]/div/div[1]/h1
@@ -90,12 +135,24 @@ Id_ReturnsPage_Qty_TextBox = items:qty_requested0
 Id_ReturnsPage_Submit_button = submit.save
 Xpath_ProductSearch_Product_Image = //img[contains(@id,'product-collection-image')]
 Xpath_ProductPage_Product_Image = //main[@id='maincontent']/div[3]/div[1]/div[2]/div[2]/ol/li/div/a/span/span/img
-Xpath_ProductPage_CartUpdate_Msg = //main[@id='maincontent']/div[1]/div[2]/div/div/div
-Xapth_ProductPage_Cart_Button = //a[@class='action showcart']
+Xpath_ProductPage_CartUpdate_Msg = //html/body/div[1]/header/div[2]/div[1]/a/span[2]
+//main[@id='maincontent']/div[1]/div[2]/div/div/div
+Xapth_ProductPage_Cart_Button = html/body/div[1]/header/div[2]/div[1]/a/span[2]/span[1]
+//a[@class='action showcart']
 Id_Cart_Checkout_Button = top-cart-btn-checkout
+Xpath_CheckOut_PlaceOrder_Button = //div[@id='checkout-payment-method-load']/div/div[2]/div[2]/div[4]/div/button
+Xpath_PlaceOrder_Button = //button[@type='submit' and @title='Place Order']
+Id_Shipping_Method = s_method_flatrate
+Id_ShippingMethod = s_method_flatrate_flatrate
+Xpath_Next = //button[@type='submit' and @data-role='opc-continue']
+Xpath_paymentPage_PaymentMethod_RadioButton = //div[@id='checkout-payment-method-load']/div/div[1]/div[1]/label/span
+
+
+
 
 //LeanSwift - Magento Admin
 //-------------------------
+
 
 Id_AdminLoginPage_UserName_TextBox = username
 Id_AdminLoginPage_Password_TextBox = login
@@ -103,16 +160,33 @@ Xpath_AdminLoginPage_Login_Button = //form[@id='login-form']/fieldset/div[3]/div
 Xpath_IncomingMessage_Close_Button = //a[@title='close']
 Xpath_AdminLoginPage_LogOut_Link = //a[@class='link-logout']
 Xpath_DashboardPage_Sales_Link = //li[@id='menu-magento-sales-sales']/a
-Xpath_DashboardPage_Customers_Link = //ul[@id='nav']/li[4]/a/span
+Xpath_DashboardPage_Customers_Link = //li[@id='menu-magento-customer-customer']/a
 Xpath_DashboardPage_ManageCustomers_Link = //ul[@id='nav']/li[4]/ul/li[1]/a/span
-Xpath_DashboardPage_Orders_Link = //li[@id='menu-magento-sales-sales']/div/ul/li/ul/li/div/ul/li[1]/a
+Xpath_DashboardPage_Orders_Link = //li[@id='menu-magento-sales-sales']/div/ul/li/ul/li/div/ul/li[1]/a/span
+LinkText_DashboardPage_Orders_Link = Orders
+LinkText_DashboardPage_ManageCustomers_Link = All Customers
+Xpath_SalesOrderPage_LastestOrder_Checkbox = //html/body/div[2]/main/div[2]/div/div/div/div[3]/table/tbody/tr[1]/td[11]/label/input
+Xpath_OrderPage_LastestOrder_Checkbox = //html/body/div[2]/main/div[2]/div/div/div/div[4]/table/tbody/tr[1]/td[11]/label/input
+Xpath_Selectitem = //div[@id='container']/div/div[2]/div[2]/div[1]/div/button
+Xpath_SalesOrderPage_Dropdown = //div[@id='container']/div/div[2]/div[2]/div[1]/div/ul/li[1]/span
+LinkText_Admin_CacheManagement_link = Cache Management
+Id_cacheMgmtPage_check_box = cache_grid_massaction-mass-select
+Xpath_cacheMgmtPage_submit_button = //button[@type='button' and @title='Submit']
+Xpath_ConfigurationPage_SaveConfigSuccessMessage_Text = //div[@id='messages']/div/div/div
+//[@id='menu-magento-sales-sales']/div/ul/li/ul/li/div/ul/li[1]/a
 Xpath_DashboardPage_System_Link = //li[@id='menu-magento-backend-stores']/a
 Xpath_DashboardPage_Scheduler_Link = //ul[@id='nav']/li[9]/ul/li[1]/a/span
 Xpath_DashboardPage_ScheduleConfiguration_Link = //ul[@id='nav']/li[9]/ul/li[1]/ul/li[1]/a/span
-Xpath_DashboardPage_Catalog_Link = //ul[@id='nav']/li[3]/a/span
+Id_DashboardPage_Products = menu-magento-catalog-catalog
+Xpath_DashboardPage_Products = //li[@id='menu-magento-catalog-catalog']/a
+LinkText_DashboardPage_Catalog_Link = Catalog
+Xpath_CatalogPage_Filters = //div[@id='container']/div/div[2]/div[1]/div[2]/div/button
+ //button[@type='button' and @title='Filters' and @data-action='grid-filter-expand']
 Xpath_DashboardPage_ManageProducts_Link = //ul[@id='nav']/li[3]/ul/li[1]/a/span
 Xpath_DashboardPage_GiftCardAccounts_Link = //ul[@id='nav']/li[4]/ul/li[7]/a/span
 Xpath_DashboardPage_Configurations_Link = //li[@id='menu-magento-backend-stores']/div/ul/li[1]/ul/li[1]/div/ul/li[2]/a
+
+
 Xpath_DashboardPage_Scheduler_Link = //ul[@id='nav']/li[9]/ul/li[1]/a/span
 Id_ManageGiftCard_Status_DropDown = giftcardaccountGrid_giftcardaccount_filter_state
 Xpath_ManageGiftCard_Search_Button = //button[@type='button' and @title='Search']
@@ -126,10 +200,12 @@ Xpath_ManageGiftCard_GiftCardAccount4_Text = //table[@id='giftcardaccountGrid_ta
 Xpath_ManageGiftCard_GiftCardAmount4_Text = //table[@id='giftcardaccountGrid_table']/tbody/tr[4]/td[9]
 Name_SalesOrderPage_LastestOrder_Checkbox = order_ids
 Id_SalesOrderPage_SalesAction_Dropdown = sales_order_grid_massaction-select
+Xpath_SalesOrderPage_Seletc = //div[@id='container']/div/div[2]/div[2]/div[1]/div/ul/li[1]/span
 Id_ManageProductPage_ProductAction_Dropdown = productGrid_massaction-select
 Xpath_SalesOrderPage_Submit_Button = //button[@title='Submit' and @type='button']
 Xpath_ManageProductPage_Submit_Button = //button[@title='Submit' and @type='button']
-Xpath_SalesOrderPage_InitialStatus_Text = //table[@id='sales_order_grid_table']/tbody/tr/td[11]
+Xpath_SalesOrderPage_InitialStatus_Text = //div[@id='container']/div/div[4]/table/tbody/tr[1]/td[10]/div
+//table[@id='sales_order_grid_table']/tbody/tr/td[11]
 Id_SalesOrderPage_OrderSyncStatus_Text = messages
 Xpath_SalesOrderPage_OrderView_Link = //table[@id='sales_order_grid_table']/tbody/tr[1]/td[12]/a
 Id_SalesOrderPage_RMA_Link = sales_order_view_tabs_order_rma
@@ -150,10 +226,17 @@ Xpath_ManageRMAPage_ViewRMA_Link = //table[@id='rmaGrid_table']/tbody/tr[1]/td[1
 Xpath_ManageRMAPage_FinalOrderNumber_Text = //table[@id='rmaGrid_table']/tbody/tr[1]/td[4]
 Xpath_ManageRMAPage_GeneralResolution_Text = //table[@id='enterprise_rma_item_edit_grid_table']/tbody/tr/td[7]
 Xpath_ManageRMAPage_GeneralStatus_Text = //table[@id='enterprise_rma_item_edit_grid_table']/tbody/tr/td[8]
-Xpath_SalesOrderPage_FinalOrderNumber_Text = //div[@id='container']/div/div[3]/table/tbody/tr[1]/td[2]/div
+Xpath_SalesOrderPage_FinalOrderNumber_Text = //div[@id='container']/div/div[4]/table/tbody/tr[1]/td[1]
+//div[@id='container']/div/div[3]/table/tbody/tr[1]/td[2]/div
+Id_ManageProductsPage_ItemNumber_TextBox = P7M0RUW
+Xpath_ManageProductsPage_ApplyFilter = //button[@type='button' and @data-action='grid-filter-apply']         
 Id_ManageProductsPage_ProductName_TextBox = productGrid_product_filter_name
-Xpath_ManageProductsPage_EditProduct_Link = //table[@id='productGrid_table']/tbody/tr/td[13]/a
-Id_ManageProductsPage_InventoryTab_Text = product_info_tabs_inventory
+Xpath_ManageProductsPage_EditProduct_Link = //div[@id='container']/div/div[4]/table/tbody/tr/td[13]/a
+//table[@id='productGrid_table']/tbody/tr/td[13]/a
+//Xpath_ManageProductsPage_InventoryTab_Text = 
+Name_ManageProductsPage_InventoryTab_Text = product[quantity_and_stock_status][qty]
+
+
 Xpath_ManageProductsPage_GeneralTab_Text = //a[@title='General']
 Xpath_ManageProductsPage_PricesTab_Text = //a[@title='Prices']
 Id_ManageProductsPage_GeneralProductName_TextBox = name
@@ -161,8 +244,14 @@ Id_ManageProductsPage_GeneralProductWeight_TextBox = weight
 Id_ManageProductsPage_PricesPrice_TextBox = price
 Xpath_ManageProductsPage_Product_Checkbox = //input[@name='product']
 Id_ManageProductsPage_InventoryQuantity_TextBox = inventory_qty
-Xpath_ManageProductsPage_InventorySave_Button = //button[@title='Save' and @type='button']
-Xpath_ManageProductsPage_ProductQuantity_Text = //table[@id='productGrid_table']/tbody/tr/td[9]
+Xpath_ManageProductsPage_Save_Button = //button[@id='save-button' and @title='Save' and @type='button']
+Id_ManageProductsPage_Save_Button = save-button
+
+
+Name_ManageProductsPage_ItemNumber_TextBox = erp_item_number
+
+
+Xpath_ManageProductsPage_ProductQuantity_Text = //div[@id='container']/div/div[4]/table/tbody/tr/td[9]
 Xpath_ProductsPage_ProductPrice_Text = //table[@id='productGrid_table']/tbody/tr/td[8]
 Xpath_ScheduleConfigurationPage_UpdateStock_Checkbox = //input[@value='leanswift_update_stock']
 Xpath_ScheduleConfigurationPage_leanswiftConfig_Checkbox = //input[@value='leanswift_config']
@@ -172,7 +261,7 @@ Id_ScheduleConfigurationPage_UpdateStockActions_Dropdown = job_grid_massaction-s
 Xpath_ScheduleConfigurationPage_Submit_Button = //button[@title='Submit' and @type='button']
 Xpath_ScheduleConfigurationPage_JobRunSuccess_Text = //li[@class='success-msg']/ul/li/span
 Id_ConfigurationsPage_LeanSwift_Image = leanswift_logo
-Xpath_ConfigurationsPage_eConnect_SubMenuText = //div[@id='system_config_tabs']/div[1]/ul/li[1]/a/span
+Xpath_ConfigurationsPage_eConnect_SubMenuText = //li[@id='system_config_tabs']/div[1]/ul/li[1]/a
 Xpath_ConfigurationsPage_RMA_SubMenuText = //span[contains(text(),'eConnect')]/following::span[contains(text(),'RMA')]
 Xpath_ConfigurationsPage_GiftCards_SubMenuText = //span[contains(text(),'eConnect')]/following::span[contains(text(),'Gift Card')]
 Xpath_ConfigurationsPage_MaterialPlan_SubMenuText = //span[contains(text(),'eConnect')]/following::span[contains(text(),'Material Plan')]
@@ -218,6 +307,27 @@ Xpath_UsersPage_FirstUserName_Text = //table[@id='permissionsUserGrid_table']/tb
 Xpath_SalesOrderPage_LastestOrder_Checkbox = //div[@id='container']/div/div[3]/table/tbody/tr[1]/td[11]/label/input[1]
 Xpath_SalesOrderPage_SalesAction_Button = //div[@id='container']/div/div[2]/div[2]/div[1]/div/button
 Xpath_SalesOrderPage_SalesAction_Option = //div[@id='container']/div/div[2]/div[2]/div[1]/div/ul/li[1]/span
+Id_eConnectPage_Sales_HeadNode = leanswift_sales-head
+
+
+//Dashboard page
+Xpath_Admin_Stores_link = //li[@id='menu-magento-backend-stores']/a
+LinkText_Admin_Configuration_link = Configuration
+Xpath_Admin_System_link = //li[@id='menu-magento-backend-system']/a
+LinkText_Admin_CacheManagement_link = Cache Management
+Xpath_Admin_Sales_link = //li[@id='menu-magento-sales-sales']/a
+LinkText_Admin_Orders_link = Orders
+
+
+//orders page
+Xpath_OrderPage_First_checkbox = //label[@class='data-grid-checkbox-cell-inner']/input
+Xpath_OrderPage_Actions_Button = //div[@id='container']/div/div[2]/div[2]/div[1]/div/button
+Xpath_Orderpage_SyncWithM3_button = //div[@id='container']/div/div[2]/div[2]/div[1]/div/ul/li[1]/span
+Xpath_Orderpage_FinalOrderNo_Text = //div[@id='container']/div/div[4]/table/tbody/tr[1]/td[1]/div
+
+
+
+
 
 
 //Manage Customer's Page
@@ -240,7 +350,8 @@ Xpath_AddressesPage_AdditionalAddr1_Text = //ul[@id='address_list']/li[2]/addres
 Xpath_AddressesPage_AdditionalAddr2_Text = //ul[@id='address_list']/li[3]/address
 Xpath_AddressesPage_AdditionalAddr3_Text = //ul[@id='address_list']/li[4]/address
 Id_AddressesPage_NoAddressMsg_Text = no_address_message
-Xpath_ManageCustomers_ERPCustNo_Text = //table[@id='customerGrid_table']/tbody/tr[1]/td[3]
+Xpath_ManageCustomers_ERPCustNo_Text = //div[@id='container']/div/div[5]/table/tbody/tr[2]/td[17]/div
+//table[@id='customerGrid_table']/tbody/tr[1]/td[3]
 Xpath_EditCustomer_DeleteCustomer_Button = //button[@type='button' and @title='Delete Customer']
 Xpath_AddressesPage_ERPAddrType_TextBox = //div[3]/div/div[2]/div/table/tbody/tr[15]/td[2]/input
 Xpath_AddressesPage_ERPAddrId_TextBox = //div[3]/div/div[2]/div/table/tbody/tr[16]/td[2]/input
@@ -255,31 +366,33 @@ Xpath_DashboardPage_Users_Link = //ul[@id='nav']/li[9]/ul/li[12]/ul/li[1]/a/span
 Id_CustomerPage_ERPData_Link = customer_info_tabs_ERP Data
 Id_ERPDataPage_SalesRep_TextBox = sales_rep
 
+
 //eConnect Configuration
 Id_MagAdmin_Stores_link = menu-magento-backend-stores
-LinkText_MagAdmin_Configuration_link = Configuration
-Id_MagAdmin_Configuration_link = //li[@id='menu-magento-backend-stores']/div/ul/li[1]/ul/li[1]/div/ul/li[2]/a/span
+Xpath_MagAdmin_Stores_link = //li[@id='menu-magento-backend-stores']/a
+LinkText_MagAdmin_Configuration = Configuration
+Id_MagAdmin_Configuration_link = //li[@id='menu-magento-config-system-config']/div/ul/li[1]/ul/li[1]/div/ul/li[2]/a/span
 Xpath_eConnectPage_eConnect_HeaderText = //ul[@id='system_config_tabs']/li[7]/dl/dd/a/span
 Id_eConnectPage_General_HeadNode = leanswift_general_config-head
 Id_eConnectPage_GeneralEmail_TextBox = leanswift_general_config_email
 Id_eConnectPage_GeneralServiceURL_TextBox = leanswift_general_config_service_url
-Id_eConnectPage_GeneralUseERPOrdHist_Dropdown = leanswift_general_config_use_erp_orderhistory
+Id_eConnectPage_GeneralUseERPOrdHist_Dropdown = leanswift_general_config_use_erp_order_history
 Id_eConnectPage_GeneralTestMode_Dropdown = leanswift_general_config_testmode
 Id_eConnectPage_GeneralDebug_Dropdown = leanswift_general_config_debug_log_data
 Id_eConnectPage_BasicData_HeadNode = leanswift_basic_data-head
 Id_eConnectPage_BasicDataCompany_TextBox = leanswift_basic_data_company
 Id_eConnectPage_BasicDataDivision_TextBox = leanswift_basic_data_division
 Id_eConnectPage_BasicDataFacility_TextBox = leanswift_basic_data_facility
-Id_eConnectPage_BasicDataPriceList_TextBox = leanswift_basic_data_erp_price_code
-Id_eConnectPage_BasicDataCurrency_TextBox = leanswift_basic_data_erp_currency_code
+Id_eConnectPage_BasicDataWarehouse_TextBox = leanswift_basic_data_warehouse
+Id_eConnectPage_BasicDataPriceList_TextBox = leanswift_basic_data_price_code
+Id_eConnectPage_BasicDataCurrency_TextBox = leanswift_basic_data_currency_code
 Id_eConnectPage_BasicDataOrderType_TextBox = leanswift_basic_data_order_type
-Id_eConnectPage_BasicDataWarehouse_TextBox = leanswift_econnect_basic_data_warehouse
 Id_eConnectPage_Authentication_HeadNode = leanswift_authentication-head
 Id_eConnectPage_AuthenticationoAuth_Dropdown = leanswift_econnect_secure_enable_oauth
-Id_eConnectPage_AuthenticationWebServiceUserName_TextBox = leanswift_secure_web_services_username
-Id_eConnectPage_AuthenticationWebServicePassword_TextBox = leanswift_secure_web_services_password
-Id_eConnectPage_AuthenticationClientID_TextBox = leanswift_secure_web_services_clientid
-Id_eConnectPage_AuthenticationClientSecret_TextBox = leanswift_secure_web_services_clientsecret
+Id_eConnectPage_AuthenticationWebServiceUserName_TextBox = leanswift_authentication_web_service_username
+Id_eConnectPage_AuthenticationWebServicePassword_TextBox = leanswift_authentication_web_service_password
+Id_eConnectPage_AuthenticationClientID_TextBox = leanswift_authentication_web_service_clientid
+Id_eConnectPage_AuthenticationClientSecret_TextBox = leanswift_authentication_web_service_clientsecret
 Id_eConnectPage_ShippingMethod_HeadNode = leanswift_econnect_shipping_method-head
 Xpath_eConnectPage_DeliveryMethodMapping_VerifyElementText = //tr[@id='row_leanswift_econnect_shipping_method_delivery_method']/td[1]/label
 Xpath_eConnectPage_ShippingRecord_WebElements = //tr[@id='row_leanswift_econnect_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr
@@ -318,10 +431,16 @@ Xpath_eConnectPage_ProdSyncM3Attr_TextBox7 = //tr[@id='row_leanswift_econnect_sy
 Xpath_eConnectPage_ProdSyncDefault_TextBox7 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'default_value')]/input
 Id_eConnectPage_CustGeneralConfig_HeadNode = leanswift_econnect_customer_general-head
 Id_eConnectPage_CustConfCreateNewCust_Dropdown = leanswift_customer_configuration_new_customer_creation
+//leanswift_customer_configuration-head
 Id_eConnectPage_CustConfCommonCustID_TextBox = leanswift_customer_configuration_common_customer_id
+Id_eConnectPage_CustTemplateID_TextBox = leanswift_customer_configuration_customer_template_id
+
+
 Id_eConnectPage_CustConfCommonCustIDNewYes_TextBox = leanswift_econnect_customer_general_cust_tmpl_id
 Id_eConnectPage_ERPCustRegisterEnable_Dropdown = leanswift_customer_configuration_enable_b2b_registration
-Id_eConnectPage_CustomerTemplateId_TextBox = leanswift_econnect_customer_general_cust_reg_tmpl_id
+//leanswift_customer_configuration_enable_b2b_registration
+Id_eConnectPage_CustomerTemplateId_TextBox = leanswift_customer_configuration_customer_template_id1
+//leanswift_econnect_customer_general_cust_reg_tmpl_id
 Id_eConnectPage_CustSync_HeadNode = leanswift_econnect_custsync-head
 Id_eConnectPage_CustSyncUpdtCustDataOnLogin_Dropdown = leanswift_econnect_custsync_enable_sync
 Id_eConnectPage_CustSyncAddrTypeIds_TextBox = leanswift_econnect_custsync_address_type_id
@@ -379,10 +498,10 @@ Id_eConnectPage_SalesEnableOrderComments_Dropdown = leanswift_econnect_sales_ord
 Id_eConnectPage_SalesSendConfirmation_Dropdown = leanswift_econnect_sales_send_order_conf_after_erp_order_placed
 Id_eConnectPage_SalesDisplayInvoice_Dropdown = leanswift_econnect_sales_display_invoice
 Id_eConnectPage_SalesCapturePaymentOnline_Dropdown = leanswift_econnect_sales_payment_capture
-Id_eConnectPage_EnableShipComplete_Dropdown = leanswift_econnect_sales_ship_complete
-Id_eConnectPage_OrderCharges_HeadNode = leanswift_econnect_order_charges-head
-Id_eConnectPage_OrderChargesTaxTransfer_Dropdown = leanswift_econnect_order_charges_sales_tax_transfer
-Id_eConnectPage_OrderChargesTaxChargeCode_Dropdown = leanswift_econnect_order_charges_sales_tax_charge_id
+Id_eConnectPage_EnableShipComplete_Dropdown = leanswift_sales_ship_complete
+Id_eConnectPage_OrderCharges_HeadNode = leanswift_order_charges-head
+Id_eConnectPage_OrderChargesTaxTransfer_Dropdown = leanswift_order_charges_sales_tax_transfer
+Id_eConnectPage_OrderChargesTaxChargeCode_Dropdown = leanswift_order_charges_sales_tax_charge_id
 Id_eConnectPage_OrderChargesFeeChargeType_Dropdown = leanswift_econnect_order_charges_charge_type
 Id_eConnectPage_OrderChargesFeeChargeCode_Dropdown = leanswift_econnect_order_charges_charge_code
 Id_eConnectPage_OrderChargesGiftWrapTransfer_Dropdown = leanswift_econnect_order_charges_gift_wrap_transfer
@@ -421,11 +540,15 @@ Id_eConnectPage_ERPInventoryAttribute_Dropdown = leanswift_econnect_inventory_sy
 Id_eConnectPage_InventorySyncProductLoad_Dropdown = leanswift_econnect_inventory_sync_sync_on_load
 Id_eConnectPage_InventorySyncAddToCart_Dropdown = leanswift_econnect_inventory_sync_sync_on_add_to_cart
 Id_eConnectPage_InventorySyncCheckOut_Dropdown = leanswift_econnect_inventory_sync_sync_on_checkout
-Id_eConnectPage_VersionInfo_HeadNode = leanswift_econnect_version-head
-Xpath_eConnectPage_MagentoeConenctVersion_Text = //tr[@id='row_leanswift_econnect_version_econnect_version']/td[2]/strong
+Id_eConnectPage_VersionInfo_HeadNode = leanswift_version-head
+Xpath_eConnectPage_MagentoeConenctVersion_Text = //tr[@id='row_leanswift_version_magento']/td[2]/strong
+//tr[@id='row_leanswift_econnect_version_econnect_version']/td[2]/strong
 Xpath_eConnectPage_JavaeConenctVersion_Text = //tr[@id='row_leanswift_econnect_version_Java_version']/td[2]/strong
+//[@id='row_leanswift_version_java']/td[1]/label
 Xpath_ConfigurationPage_SaveConfig_Button = //button[@type='button' and @title='Save Config']
-Xpath_ConfigurationPage_SaveConfigSuccessMessage_Text = //div[@id='messages']/div/div/div
+
+
+
 
 //RMA Configurations
 Xpath_RMAPage_RMA_HeaderText=//div[@id='content']/div/div[2]/table/tbody/tr/td[1]/h3
@@ -477,11 +600,13 @@ Xpath_RMAPage_RMAReasonCodeDescription_TextBox6 = //tr[@id='row_leanswift_custom
 Xpath_RMAPage_RMAReasonCodeRMAType_Dropdown6 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'return_type')]/select
 Xpath_RMAPage_RMAReasonCodeUsableByCust_Dropdown6 = //tr[@id='row_leanswift_customerreturns_returns_reason_code_reason_code']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'usable_by_customer')]/select
 
+
 //Gift Cards Configuration
 Xpath_GiftCardsPage_GiftCards_HeaderText = //div[@id='content']/div/div[2]/table/tbody/tr/td[1]/h3
 Id_GiftCardspage_General_HeadNode = leanswift_econnectgiftcard_general-head
 Id_GiftCardsPage_GeneralGiftCardLineChargeID_Dropdown = leanswift_econnectgiftcard_general_giftcard_linecharge
 Id_GiftCardsPage_GeneralGiftCardHeaderChargeID_Dropdown = leanswift_econnectgiftcard_general_giftcard_headcharge
+
 
 //Material Plan Configuration
 Xpath_MaterialPlanPage_MaterialPlan_HeaderText = //div[@id='content']/div/div[2]/table/tbody/tr/td[1]/h3
@@ -497,6 +622,7 @@ Id_MaterialPlanPage_CartPageSyncRealTime_DropDown = leanswift_materialplan_cart_
 Id_MaterialPage_ProductGrid_HeadNode = leanswift_materialplan_product_grid-head
 Id_MaterialPlanPage_ProductGridDisplay_DropDown = leanswift_materialplan_product_grid_enable_grid
 
+
 //Sales Rep Configuration
 Xpath_MaterialPlanPage_SalesRep_HeaderText = //div[@id='content']/div/div[2]/table/tbody/tr/td[1]/h3
 Id_SalesRepPage_General_HeadNode = leanswift_customerlogin_default-head
@@ -504,14 +630,19 @@ Id_SalesRepPage_SalesPersonRole_DropDown = leanswift_customerlogin_default_role_
 Id_SalesRepPage_EnableTimeStamp_DropDown = leanswift_customerlogin_default_timestamp
 
 
+
+
 //LeanSwift - M3H5 Client
 //-----------------------
+
 
 Id_HomePage_HomeIcon_Button = startDiv
 Xpath_HomePage_ApplicationsArea_Text1 = //body[@class='inforApplicationPadding']
 Xpath_HomePage_ApplicationsArea_Text = //div[@class='gvFillAbsolute']
+Xpath_HomePage_Menu = //div[@class='gvWidgetHeader']
 Xpath_HomePage_MenuListFirstItem_Text = //span[@class='gvWidgetHeaderTitle']/following::a[contains(text(),'SMS - Sales and Marketing Automation')]
 Xpath_HomePage_Search_TextBox = //input[@type='text' and @placeholder='Search']
+//div[@type='text' and @placeholder='Search']
 Xpath_HomePage_SearchIcon_Button = //button[@class='inforTriggerButton inforSearchButton gvM3MenuSearchButtons' and @type='button']
 Xpath_HomePage_CustOpenTool_Link = //span[@tag='OIS300']
 Id_OpenToolPage_OrderNum_TextBox = W1OBKV
@@ -525,6 +656,15 @@ Id_SalesDisplayPage_ItemNumber_TextBox  = WWPOPN
 Id_SalesDisplayPage_Simulate_Button = X__4683
 Id_MaterialPlan_DateFilter_TextBox = W1PLDT
 Id_MaterialPlan_StatusFilter_TextBox = W1STAT
+Id_Status_TextBox = WRSTATContainer
+Id_Statusvalue_TextBox = WRSTATContainer
+Xpath_Statusvalue_TextBox = //html/body/div[12]/ul/li[4]/a
+LinkText_Statusvalue_TextBox = 20-Definite
+
+
+Id_Next_Button = Next
+
+
 Xpath_ProductAvailabilityPage_TotalEntry_Text = //div[@class='grid-canvas grid-canvas-top grid-canvas-left']/div[2]/div[7]
 Xpath_OrderProcessPage_FirstEntry1_Text = //div[contains(@class,'slick-cell l1 r1')]
 Xpath_OrderProcessPage_FirstEntry2_Text = //div[contains(@class,'slick-cell l7 r7')]
@@ -589,7 +729,6 @@ Id_OrderProcessPage_PackNum_TextBox = W1PANR
 Id_OrderProcessPage_Packaging_TextBox = W1PACT
 Id_OrderProcessPage_PackAdd_Button = WAD74C0
 Id_OrderProcessPage_Previous_Button = Prev
-Id_HomePage_HomeIcon_Button = startDiv
 Xpath_HomePage_Invoice_Menu = //span[@tag='OIS180']
 Id_InvoicePage_COFromNum_TextBox = WFORNO
 Id_InvoicePage_COToNum_TextBox = WTORNO
