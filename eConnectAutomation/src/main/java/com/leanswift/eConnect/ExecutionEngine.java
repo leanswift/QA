@@ -339,7 +339,7 @@ public class ExecutionEngine {
 			if (path.equals("testScriptsPath"))
 				path = appTestPath + "/Test_Scripts/" + project;
 			else if (path.equals("testResultsPath"))
-				path = appTestPath + "/Test_Results";
+				path = appTestPath ;
 			else if (path.equals("ObjectRepository"))
 				path = appTestPath + "/Object_Repository/" + project;
 			else if (path.equals("webDriverServerPath"))
@@ -356,26 +356,32 @@ public class ExecutionEngine {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.dateFormat);
 		// delete all the TestOutput Folders present inside Test Results folder
 		deleteTestOutputFolders();
+		
 		// --Creating a test result folder for storing output files
-		String testResultFolder = getPath("testResultsPath") + "/TestResult_" + dateFormat.format(new Date());
-		File dir = new File(testResultFolder);
-		dir.mkdir();
+		String testResultFolder = getPath("testResultsPath") + "/Test_Results"; 
+		new File(testResultFolder).mkdir();
+		
+		// -- Creating a test result folder based on the time stamp
+		String testResultFolder_ts = testResultFolder + "/TestResult_" + dateFormat.format(new Date());
+		new File(testResultFolder_ts).mkdir();
 		try {
 			// --Redirecting console output to a file in specified location
-			System.setOut(new PrintStream(new FileOutputStream(testResultFolder + "/Console_Output.log")));
+			System.setOut(new PrintStream(new FileOutputStream(testResultFolder_ts + "/Console_Output.log")));
 		} catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null,
 					"Invalid Path.Enter the Path where eConnectAutomation Folder is placed or File Seperator should be '/' ");
 			e.printStackTrace();
 		}
 
-		return testResultFolder;
+		return testResultFolder_ts;
 	}
 
 	public static void deleteTestOutputFolders() {
 		try {
+			File path =  new File(getPath("testResultsPath") + "/Test_Results");
 			// clean files and folders inside Test_Results
-			FileUtils.cleanDirectory(new File(getPath("testResultsPath")));
+			if(path.exists())
+			FileUtils.cleanDirectory(path);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
