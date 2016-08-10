@@ -244,7 +244,7 @@ public class ExecutionEngine {
 		publishHTMLReport(Constants.htmlResultArrList.toArray(new String[][] {}));
 
 		// --Displaying test execution completion message dialog
-		JOptionPane.showMessageDialog(null, "Test Execution Completed");
+		//JOptionPane.showMessageDialog(null, "Test Execution Completed");
 	}
 
 	public void executeReflectionMethod(String strClassName, String strMethodName, Object... paramList) {
@@ -368,8 +368,8 @@ public class ExecutionEngine {
 			// --Redirecting console output to a file in specified location
 			System.setOut(new PrintStream(new FileOutputStream(testResultFolder_ts + "/Console_Output.log")));
 		} catch (FileNotFoundException e) {
-			JOptionPane.showMessageDialog(null,
-					"Invalid Path.Enter the Path where eConnectAutomation Folder is placed or File Seperator should be '/' ");
+			/*JOptionPane.showMessageDialog(null,
+					"Invalid Path.Enter the Path where eConnectAutomation Folder is placed or File Seperator should be '/' ");*/
 			e.printStackTrace();
 		}
 
