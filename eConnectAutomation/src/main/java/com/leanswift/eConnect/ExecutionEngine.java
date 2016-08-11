@@ -205,9 +205,9 @@ public class ExecutionEngine {
 										} else {
 											// --Making a call to capture sheet
 											// shot function if test run failed
-											Constants.testResultArr[tdRow
-													- 1][Constants.resultArrTestResultCol] = Constants.testResultFail;
 											/*Constants.testResultArr[tdRow
+													- 1][Constants.resultArrTestResultCol] = Constants.testResultFail;
+											Constants.testResultArr[tdRow
 													- 1][Constants.resultArrScreenShotCol] = captureScreenShot(
 															testCaseName, testResultFolder);
 											
