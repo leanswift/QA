@@ -207,11 +207,11 @@ public class ExecutionEngine {
 											// shot function if test run failed
 											Constants.testResultArr[tdRow
 													- 1][Constants.resultArrTestResultCol] = Constants.testResultFail;
-											Constants.testResultArr[tdRow
+											/*Constants.testResultArr[tdRow
 													- 1][Constants.resultArrScreenShotCol] = captureScreenShot(
 															testCaseName, testResultFolder);
 											
-												keyFns.quitBrowser();
+											keyFns.quitBrowser();*/
 											
 										}
 									}
