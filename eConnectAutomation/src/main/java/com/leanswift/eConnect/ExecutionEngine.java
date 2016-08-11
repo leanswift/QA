@@ -50,6 +50,7 @@ public class ExecutionEngine {
 	static String testResultFolder = prepareTestOutputFolder();
 	static int tcRow_tmp = 0;
 	
+	
 	public static void main(String[] args) {
 
 		// --Creating objects for helper classes
@@ -171,6 +172,7 @@ public class ExecutionEngine {
 												paramListObj);
 										}
 									}
+									
 								}
 
 								/*
@@ -208,6 +210,9 @@ public class ExecutionEngine {
 											Constants.testResultArr[tdRow
 													- 1][Constants.resultArrScreenShotCol] = captureScreenShot(
 															testCaseName, testResultFolder);
+											
+												keyFns.quitBrowser();
+											
 										}
 									}
 								System.out.println("------------------------------END TEST - " + testSuiteName + " / "
