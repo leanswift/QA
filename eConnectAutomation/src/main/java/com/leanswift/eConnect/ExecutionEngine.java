@@ -250,6 +250,7 @@ public class ExecutionEngine {
 
 		// --Displaying test execution completion message dialog
 		//JOptionPane.showMessageDialog(null, "Test Execution Completed");
+		System.out.println("Test Execution Completed");
 	}
 
 	public void executeReflectionMethod(String strClassName, String strMethodName, Object... paramList) {
