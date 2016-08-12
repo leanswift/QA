@@ -345,7 +345,7 @@ public class ExecutionEngine {
 			if (path.equals("testScriptsPath"))
 				path = appTestPath + "/Test_Scripts/" + project;
 			else if (path.equals("testResultsPath"))
-				path = appTestPath ;
+				path = appTestPath + "/Test_Results";
 			else if (path.equals("ObjectRepository"))
 				path = appTestPath + "/Object_Repository/" + project;
 			else if (path.equals("webDriverServerPath"))
@@ -358,36 +358,46 @@ public class ExecutionEngine {
 		return path;
 	}
 
-	public static String prepareTestOutputFolder() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.dateFormat);
-		// delete all the TestOutput Folders present inside Test Results folder
-		deleteTestOutputFolders();
+	public static String prepareTestOutputFolder() {		
+		// Archive all the TestOutput Folders present inside Test Results folder		
+		ArchiveTestOutputFolders();
 		
 		// --Creating a test result folder for storing output files
-		String testResultFolder = getPath("testResultsPath") + "/Test_Results"; 
+		String testResultFolder = getPath("testResultsPath") + "/Test_Results_Latest";
+		//dateFormat.format(new Date()); 
 		new File(testResultFolder).mkdir();
 		
-		// -- Creating a test result folder based on the time stamp
-		String testResultFolder_ts = testResultFolder + "/TestResult_" + dateFormat.format(new Date());
-		new File(testResultFolder_ts).mkdir();
 		try {
 			// --Redirecting console output to a file in specified location
-			System.setOut(new PrintStream(new FileOutputStream(testResultFolder_ts + "/Console_Output.log")));
+			System.setOut(new PrintStream(new FileOutputStream(testResultFolder + "/Console_Output.log")));
 		} catch (FileNotFoundException e) {
 			/*JOptionPane.showMessageDialog(null,
 					"Invalid Path.Enter the Path where eConnectAutomation Folder is placed or File Seperator should be '/' ");*/
 			e.printStackTrace();
 		}
 
-		return testResultFolder_ts;
+		return testResultFolder;
 	}
 
 	public static void deleteTestOutputFolders() {
 		try {
-			File path =  new File(getPath("testResultsPath") + "/Test_Results");
+			File path =  new File(getPath("testResultsPath"));
 			// clean files and folders inside Test_Results
 			if(path.exists())
 			FileUtils.cleanDirectory(path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void ArchiveTestOutputFolders() {
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.dateFormat);
+			File path =  new File(getPath("testResultsPath") + "/Test_Results_Latest");
+			String destinationFolder = new File(getPath("testResultsPath")) + "/Archive/TestResult" + dateFormat.format(new Date());
+			// Archive Test_Results 				
+			if(path.exists())
+			FileUtils.moveDirectory(path, new File(destinationFolder));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
