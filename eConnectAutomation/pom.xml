@@ -69,7 +69,8 @@
          </execution>
        </executions>
          <configuration>
-          <mainClass>main.java.com.leanswift.eConnect.ExecutionEngine</mainClass>        
+          <mainClass>main.java.com.leanswift.eConnect.ExecutionEngine</mainClass>
+          <cleanupDaemonThreads>true</cleanupDaemonThreads>     
          </configuration>
         
       </plugin>
