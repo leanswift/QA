@@ -54,7 +54,7 @@ public class Constants {
 	public static String mailUserName = "mailUserName";
 	public static String mailPassWord= "mailPassWord";
 	public static String host = "smtp.gmail.com";
-	public static String port = "465";
+	public static String port = "587"; //465
 	public static String starttls = "true";
 	public static String auth = "true";
 	public static boolean debug = false;
