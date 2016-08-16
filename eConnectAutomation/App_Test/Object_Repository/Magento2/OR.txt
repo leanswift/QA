@@ -495,7 +495,6 @@ Xpath_eConnectPage_CustSyncM3AttrCustMappg_Dropdown1 = //tr[@id='row_leanswift_e
 Xpath_eConnectPage_CustSyncCustomerMappgM3AttributesAddToEndMethod_Button = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
 Xpath_eConnectPage_CustSyncMagentoCustMappgAttr_Dropdown2 = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'magento_attribute')]/select
 Xpath_eConnectPage_CustSyncM3AttrCustMappg_Dropdown2 = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_attribute')]/select
-Id_eConnectPage_Sales_HeadNode = leanswift_econnect_sales-head
 Id_eConnectPage_SalesEnableOrderComments_Dropdown = leanswift_econnect_sales_order_comments
 Id_eConnectPage_SalesSendConfirmation_Dropdown = leanswift_econnect_sales_send_order_conf_after_erp_order_placed
 Id_eConnectPage_SalesDisplayInvoice_Dropdown = leanswift_econnect_sales_display_invoice
