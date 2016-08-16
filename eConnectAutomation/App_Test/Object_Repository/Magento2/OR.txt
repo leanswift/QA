@@ -237,7 +237,7 @@ Xpath_ManageProductsPage_EditProduct_Link = //div[@id='container']/div/div[4]/ta
 //Xpath_ManageProductsPage_InventoryTab_Text = 
 Name_ManageProductsPage_InventoryTab_Text = product[quantity_and_stock_status][qty]
 
-Xpath_ManageProductsPage_GeneralTab_Text = //a[@title='General']
+Xpath_ManageProductsPage_GeneralTab_Text  = //a[@title='General']
 Xpath_ManageProductsPage_PricesTab_Text = //a[@title='Prices']
 Id_ManageProductsPage_GeneralProductName_TextBox = name
 Id_ManageProductsPage_GeneralProductWeight_TextBox = weight
