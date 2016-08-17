@@ -103,7 +103,7 @@ LinkText_PlaceOrder_Button = Place Order
 Xpath_CheckOutPage_PlaceOrder_Button = //button[@type='submit' and @title='Place Order']
 //Xpath_CheckOutPage_PlaceOrder_Button = //div[@id='review-buttons-container']/button[@class='button btn-checkout']
 Id_CheckOutPage_Comments_TextArea = comments
-Id_CheckOutPage_ShipComplete_Checkbox = shipcomplete
+Id_CheckOutPage_ShipComplete_Checkbox = ship_complete
 Xpath_CommercePage_OrderPlaceConf_Text = //main[@id='maincontent']/div[3]/div/div[2]/p[1]
 Xpath_CartPage_Tax_Text = //table[@class='data table totals']/tbody/tr[@class='totals-tax']/td/span
 Xpath_Checkout_Tax_Text = //div[@id='opc-sidebar']/div[1]/table/tbody/tr[3]/td/span
