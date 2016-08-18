@@ -467,49 +467,49 @@ public class ExecutionEngine {
 		}
 	}
 	
-	public static String[] createHtml(String filename,String[][] testResultArr){
+	public static String[] createHtml(String filename, String[][] testResultArr) {
 		String htmlHeader = null, htmlBody = null, htmlFooter = null;
 		// --Setting up HTML header content
-					htmlHeader = "<html><head><meta charset='utf-8'><title>Test Execution Report</title></head>";
+		htmlHeader = "<html><head><meta charset='utf-8'><title>Test Execution Report</title></head>";
 
-					// --Setting up HTML body content
-					if(filename.equals("executionReportFileName"))
-						htmlBody = "<body><h1 align='center'>eConnect Automation Report</h1><table align='center' border='1' style='width:75%'><thead><tr><th>SNo.</th><th>Test Case Name</th><th>Test Case Description</th><th>Time Stamp</th><th>Status</th><th>Failure Screenshot Location</th></thead>";
-					else
-						htmlBody = "<body><h1 align='center'>eConnect Automation Report</h1><table align='center' border='1' style='width:75%'><thead><tr><th>SNo.</th><th>Test Case Name</th><th>Test Case Description</th><th>Time Stamp</th><th>Status</th></thead>";
-				
-					htmlFooter = "</body></html>";
-					for (int arrRow = 0; arrRow < testResultArr.length; arrRow++) {
-						int printarrRow = arrRow + 1;
-						htmlBody += "<tr><td align='center'>" + printarrRow + "</td>";
-						for (int arrCol = 0; arrCol < testResultArr[0].length; arrCol++) {
+		// --Setting up HTML body content
+		if (filename.equals("executionReportFileName"))
+			htmlBody = "<body><h1 align='center'>eConnect Automation Report</h1><table align='center' border='1' style='width:75%'><thead><tr><th>SNo.</th><th>Test Case Name</th><th>Test Case Description</th><th>Time Stamp</th><th>Status</th><th>Failure Screenshot Location</th></thead>";
+		else
+			htmlBody = "<body><h1 align='center'>eConnect Automation Report</h1><table align='center' border='1' style='width:75%'><thead><tr><th>SNo.</th><th>Test Case Name</th><th>Test Case Description</th><th>Time Stamp</th><th>Status</th></thead>";
 
-							// --Setting up HTML content for 'PASS' condition
-							if (testResultArr[arrRow][arrCol].equalsIgnoreCase(Constants.testResultPass))
-								htmlBody += "<td align='center' bgcolor='#00FF00'>" + testResultArr[arrRow][arrCol] + "</td>";
+		htmlFooter = "</body></html>";
+		for (int arrRow = 0; arrRow < testResultArr.length; arrRow++) {
+			int printarrRow = arrRow + 1;
+			htmlBody += "<tr><td align='center'>" + printarrRow + "</td>";
+			for (int arrCol = 0; arrCol < testResultArr[0].length; arrCol++) {
 
-							// --Setting up HTML content for 'FAIL' condition
-							else if (testResultArr[arrRow][arrCol].equalsIgnoreCase(Constants.testResultFail))
-								htmlBody += "<td align='center' bgcolor='#FF0000'>" + testResultArr[arrRow][arrCol] + "</td>";
+				// --Setting up HTML content for 'PASS' condition
+				if (testResultArr[arrRow][arrCol].equalsIgnoreCase(Constants.testResultPass))
+					htmlBody += "<td align='center' bgcolor='#00FF00'>" + testResultArr[arrRow][arrCol] + "</td>";
 
-							// --Setting up HTML content for failure screenshot
-							// condition
-							else if (testResultArr[arrRow][arrCol].endsWith(".jpg")) {
-									if(filename.equals("executionReportFileName")){
-								String formattedLink = "file:///" + testResultArr[arrRow][arrCol];
-								htmlBody += "<td align='center'><a href='" + formattedLink + "'>Failure Screenshot</a></td>";
-									}
-							}
+				// --Setting up HTML content for 'FAIL' condition
+				else if (testResultArr[arrRow][arrCol].equalsIgnoreCase(Constants.testResultFail))
+					htmlBody += "<td align='center' bgcolor='#FF0000'>" + testResultArr[arrRow][arrCol] + "</td>";
 
-							// --Setting up HTML content for other condition
-							else
-								htmlBody += "<td align='center'>" + testResultArr[arrRow][arrCol] + "</td>";
-						}
-						htmlBody += "</tr>";
+				// --Setting up HTML content for failure screenshot
+				// condition
+				else if (testResultArr[arrRow][arrCol].endsWith(".jpg")) {
+					if (filename.equals("executionReportFileName")) {
+						String formattedLink = "file:///" + testResultArr[arrRow][arrCol];
+						htmlBody += "<td align='center'><a href='" + formattedLink + "'>Failure Screenshot</a></td>";
 					}
-					htmlBody += "</table>";
-					String[] html_arr = {htmlHeader , htmlBody , htmlFooter};
-				return html_arr;
+				}
+
+				// --Setting up HTML content for other condition
+				else
+					htmlBody += "<td align='center'>" + testResultArr[arrRow][arrCol] + "</td>";
+			}
+			htmlBody += "</tr>";
+		}
+		htmlBody += "</table>";
+		String[] html_arr = { htmlHeader, htmlBody, htmlFooter };
+		return html_arr;
 	}
 	
 	public static void sendEmailReport(String testReportName, String[][] testResultArr) {
@@ -563,31 +563,26 @@ public class ExecutionEngine {
 			multipart.addBodyPart(messageBodyPart);
 			messageBodyPart = new MimeBodyPart();
 			
+			// --Setting up failure screenshots as an attachment
+			for (int arrRow = 0; arrRow < testResultArr.length; arrRow++) {
+				for (int arrCol = 0; arrCol < testResultArr[0].length; arrCol++) {
+					if (testResultArr[arrRow][arrCol].endsWith(".jpg")) {
+						String screenshot = testResultArr[arrRow][arrCol];
+						String filename = screenshot.substring(screenshot.indexOf("/") + 1);
+						DataSource source_src = new FileDataSource(screenshot);
+						messageBodyPart = new MimeBodyPart();
+						messageBodyPart.setDataHandler(new DataHandler(source_src));
+						messageBodyPart.setFileName(filename);
+						multipart.addBodyPart(messageBodyPart);
+					}
+				}
+			}
 			
-
 			// --Setting up test execution report HTML file as an attachment
 			DataSource source = new FileDataSource(testReportName);
 			messageBodyPart.setDataHandler(new DataHandler(source));
 			messageBodyPart.setFileName(Constants.testReportHTMLName);
 			multipart.addBodyPart(messageBodyPart);
-			//msg.setContent(multipart);
-			//msg.saveChanges();
-			
-			for (int arrRow = 0; arrRow < testResultArr.length; arrRow++) {
-				for (int arrCol = 0; arrCol < testResultArr[0].length; arrCol++) {
-			if (testResultArr[arrRow][arrCol].endsWith(".jpg")) {
-				String screenshot = testResultArr[arrRow][arrCol];
-				String filename = screenshot.substring(screenshot.indexOf("/")+1);
-				DataSource source_src = new FileDataSource(screenshot);
-				messageBodyPart = new MimeBodyPart();
-				messageBodyPart.setDataHandler(new DataHandler(source_src));
-				messageBodyPart.setFileName(filename);
-				multipart.addBodyPart(messageBodyPart);
-				
-			}
-				}
-			}
-			
 			msg.setContent(multipart);
 			msg.saveChanges();
 
