@@ -68,7 +68,7 @@ Id_ViewDetailsPage_GiftMessage_TextBox = giftcard_message
 Id_ViewDetailsPage_GiftCardQuantity_TextBox = qty
 Xpath_AccountPage_Search_Button = //button[@class='action search']
 //LinkText_SearchResultPage_AddToCart_Button = Add to Cart
-Xpath_SearchResultPage_AddToCart_Button = //button[@id='product-addtocart-button']
+Xpath_SearchResultPage_AddToCart_Button = //button[@title='Add to Cart' and @type='submit']
 Xpath_Header_MyCart_Icon = //html/body/div/header/div[2]/div[1]/a
 //button[@id='product-addtocart-button']
 Xpath_CartPage_Quantity_TextBox = //input[@class='input-text qty']
@@ -307,7 +307,7 @@ Xpath_SalesOrderPage_LastestOrder_Checkbox = //div[@id='container']/div/div[3]/t
 Xpath_SalesOrderPage_SalesAction_Button = //div[@id='container']/div/div[2]/div[2]/div[1]/div/button
 Xpath_SalesOrderPage_SalesAction_Option = //div[@id='container']/div/div[2]/div[2]/div[1]/div/ul/li[1]/span
 Id_eConnectPage_Sales_HeadNode = leanswift_sales-head
-Id_eConnectPage_CustomerSync_Dropdown = leanswift_customer_sync_login_sync
+
 
 //Dashboard page
 Xpath_Admin_Stores_link = //li[@id='menu-magento-backend-stores']/a
@@ -319,8 +319,8 @@ LinkText_Admin_Orders_link = Orders
 
 //orders page
 Xpath_OrderPage_First_checkbox = //label[@class='data-grid-checkbox-cell-inner']/input
-Xpath_OrderPage_Actions_Button = //div[@id='container']/div/div[2]/div[2]/div[1]/div/button
-Xpath_Orderpage_SyncWithM3_button = //div[@id='container']/div/div[2]/div[2]/div[1]/div/ul/li[1]/span
+Xpath_OrderPage_Actions_Button =  //button[@class='action-select']
+Xpath_Orderpage_SyncWithM3_button = //ul[@class='action-menu _active']/li/span[contains(text(),'Sync with m3')]
 Xpath_Orderpage_FinalOrderNo_Text = //div[@id='container']/div/div[4]/table/tbody/tr[1]/td[1]/div
 
 
@@ -389,173 +389,327 @@ Id_eConnectPage_AuthenticationWebServiceUserName_TextBox = leanswift_authenticat
 Id_eConnectPage_AuthenticationWebServicePassword_TextBox = leanswift_authentication_web_service_password
 Id_eConnectPage_AuthenticationClientID_TextBox = leanswift_authentication_web_service_clientid
 Id_eConnectPage_AuthenticationClientSecret_TextBox = leanswift_authentication_web_service_clientsecret
-Id_eConnectPage_ShippingMethod_HeadNode =leanswift_shipping_method-head
-Id_eConnectPage_DeliveryMethodMapping_VerifyElementText = _1467277141549_549_shipping_method
 
-Xpath_eConnectPage_ShippingRecord_WebElements = //tr[@id='row_leanswift_econnect_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr
-Xpath_eConnectPage_ShippingEmptyAddMethod_Button = //tr[@id='row_leanswift_econnect_shipping_method
+Id_eConnectPage_ShippingMethod_HeadNode = leanswift_shipping_method-head
+Xpath_eConnectPage_ShippingRecord_WebElements = //tr[@id='row_leanswift_shipping_method_m3_delivery_method']/td[@class='value']/div/div/table/tbody/tr
+Xpath_eConnectPage_ShippingEmptyAddMethod_Button = //tr[@id='row_leanswift_shipping_method_m3_delivery_method']/td[@class='value']/div/div/table/tfoot/tr/td/button
+Xpath_eConnectPage_ShippingAddToEndMethod_Button = //tr[@id='row_leanswift_shipping_method_m3_delivery_method']/td[@class='value']/div/div/table/tfoot/tr/td/button[contains(@id,'addToEndBtn')]
+Xpath_eConnectPage_ShippingShippingMethod_Dropdown = //tr[@id='row_leanswift_shipping_method_m3_delivery_method']/td[@class='value']/div/div/table/tbody/tr/td/select
+Xpath_eConnectPage_ShippingM3DeliveryMethod_TextBox = //tr[@id='row_leanswift_shipping_method_m3_delivery_method']/td[@class='value']/div/div/table/tbody/tr/td[2]/input
+Xpath_eConnectPage_ShippingM3DeliveryTerm_TextBox = //tr[@id='row_leanswift_shipping_method_m3_delivery_method']/td[@class='value']/div/div/table/tbody/tr/td[3]/input
 
-Xpath_eConnectPage_ShippingRecord_WebElements = //tr[@id='row_leanswift_econnect_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr
-Xpath_eConnectPage_ShippingEmptyAddMethod_Button = //tr[@id='row_leanswift_econnect_shipping_method_delivery_method']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
-Xpath_eConnectPage_ShippingAddToEndMethod_Button = //tr[@id='row_leanswift_econnect_shipping_method_delivery_method']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
-Xpath_eConnectPage_ShippingShippingMethod_Dropdown = //table[@class='admin__control-table']/tbody/tr/td/select
-Xpath_eConnectPage_ShippingM3DeliveryMethod_TextBox = //table[@class='admin__control-table']/tbody/tr/td[2]/input
-Xpath_eConnectPage_ShippingM3DeliveryTerm_TextBox = //table[@class='admin__control-table']/tbody/tr/td[3]/input
-I
+//product sync
+Id_eConnectPage_ProdSync_HeadNode = leanswift_product_sync-head
+Id_eConnectPage_ProdSyncBatchSize_TextBox = leanswift_product_sync_batch_size
+Id_eConnectPage_ProdSyncItemAddition_DropDown = leanswift_product_sync_item_addition 
+Id_eConnectPage_ProdSyncItemSync_DropDown = leanswift_product_sync_item_sync
+Id_eConnectPage_ProdSyncSyncFrmDate_DatePicker = leanswift_product_sync_sync_date
 
-Id_eConnectPage_ProdSync_HeadNode = leanswift_econnect_sync-head
-Id_eConnectPage_ProdSyncSuperAttribute_TextBox = leanswift_econnect_sync_super_attribute
-Id_eConnectPage_ProdSyncWebsiteName_TextBox = leanswift_econnect_sync_website_name
-Id_eConnectPage_ProdSyncAttrSetName_TextBox = leanswift_econnect_sync_attribute_set_name
-Xpath_eConnectPage_ProdSyncM3AttributesRecord_WebElements = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr
-Xpath_eConnectPage_ProdSyncM3AttributesEmptyAddMethod_Button = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
-Xpath_eConnectPage_ProdSyncM3AttributesAddToEndMethod_Button = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
-Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown1 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_ProdSyncM3Attr_TextBox1 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_attribute')]/input
-Xpath_eConnectPage_ProdSyncDefault_TextBox1 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'default_value')]/input
-Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown2 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_ProdSyncM3Attr_TextBox2 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_attribute')]/input
-Xpath_eConnectPage_ProdSyncDefault_TextBox2 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'default_value')]/input
-Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown3 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_ProdSyncM3Attr_TextBox3 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'m3_attribute')]/input
-Xpath_eConnectPage_ProdSyncDefault_TextBox3 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'default_value')]/input
-Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown4 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_ProdSyncM3Attr_TextBox4 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'m3_attribute')]/input
-Xpath_eConnectPage_ProdSyncDefault_TextBox4 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'default_value')]/input
-Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown5 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_ProdSyncM3Attr_TextBox5 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'m3_attribute')]/input
-Xpath_eConnectPage_ProdSyncDefault_TextBox5 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'default_value')]/input
-Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown6 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_ProdSyncM3Attr_TextBox6 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'m3_attribute')]/input
-Xpath_eConnectPage_ProdSyncDefault_TextBox6 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'default_value')]/input
-Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown7 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_ProdSyncM3Attr_TextBox7 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'m3_attribute')]/input
-Xpath_eConnectPage_ProdSyncDefault_TextBox7 = //tr[@id='row_leanswift_econnect_sync_product_import']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'default_value')]/input
-Id_eConnectPage_CustGeneralConfig_HeadNode = leanswift_econnect_customer_general-head
-Id_eConnectPage_CustsyncConfig_HeadNode = leanswift_customer_sync-head
+Id_eConnectPage_ProdSyncSuperAttribute_TextBox = leanswift_sync_super_attribute
+Id_eConnectPage_ProdSyncWebsiteName_TextBox = leanswift_sync_website_name
+Id_eConnectPage_ProdSyncAttrSetName_TextBox = leanswift_sync_attribute_set_name
+
+Xpath_eConnectPage_ProdSyncM3AttributesRecord_WebElements = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr
+Xpath_eConnectPage_ProdSyncM3AttributesAddToEndMethod_Button = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tfoot/tr/td/button
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown1 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr/td/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox1 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr/td[2]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox1 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr/td[3]/input
+Xpath_eConnectPage_ProdSyncUseOn_DropDown1 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr/td[4]/input
+
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown2 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox2 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox2 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[3]/input
+Xpath_eConnectPage_ProdSyncUseOn_DropDown2 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown3 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox3 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[2]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox3 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[3]/input
+Xpath_eConnectPage_ProdSyncUseOn_DropDown3 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown4 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox4 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[2]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox4 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[3]/input
+Xpath_eConnectPage_ProdSyncUseOn_DropDown4 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown5 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox5 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[2]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox5 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[3]/input
+Xpath_eConnectPage_ProdSyncUseOn_DropDown5 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown6 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox6 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[2]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox6 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[3]/input
+Xpath_eConnectPage_ProdSyncUseOn_DropDown6 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncMagentoAttr_Dropdown7 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td/select
+Xpath_eConnectPage_ProdSyncM3Attr_TextBox7 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[2]/input
+Xpath_eConnectPage_ProdSyncDefault_TextBox7 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[3]/input
+Xpath_eConnectPage_ProdSyncUseOn_DropDown7 = //tr[@id='row_leanswift_product_sync_m3_product_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[4]/input
+
+//Product sync - Item disabling
+Id_eConnectPage_ProdSyncItemDisable_HeadNode = leanswift_product_disable-head
+Id_eConnectPage_ProdSyncItemDisable_DropDown = leanswift_product_disable_enable_product_disable
+Xpath_eConnectPage_ProdSyncItemDisableCon_AddBtn = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tfoot/tr/td/button
+
+Xpath_eConnectPage_ProdSyncItemDisableANDOR_DropDown1 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr/td/select
+Xpath_eConnectPage_ProdSyncItemDisableField_TextBox1 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr/td[2]/input
+Xpath_eConnectPage_ProdSyncItemDisableExpression_DropDown1 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr/td[3]/select
+Xpath_eConnectPage_ProdSyncItemDisableValue_TextBox1 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr/td[4]/input
+
+Xpath_eConnectPage_ProdSyncItemDisableANDOR_DropDown2 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[2]/td/select
+Xpath_eConnectPage_ProdSyncItemDisableField_TextBox2 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/input
+Xpath_eConnectPage_ProdSyncItemDisableExpression_DropDown2 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[2]/td[3]/select
+Xpath_eConnectPage_ProdSyncItemDisableValue_TextBox2 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[2]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncItemDisableANDOR_DropDown3 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[3]/td/select
+Xpath_eConnectPage_ProdSyncItemDisableField_TextBox3 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[3]/td[2]/input
+Xpath_eConnectPage_ProdSyncItemDisableExpression_DropDown3 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[3]/td[3]/select
+Xpath_eConnectPage_ProdSyncItemDisableValue_TextBox3 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[3]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncItemDisableANDOR_DropDown4 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[4]/td/select
+Xpath_eConnectPage_ProdSyncItemDisableField_TextBox4 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[4]/td[2]/input
+Xpath_eConnectPage_ProdSyncItemDisableExpression_DropDown4 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[2]/td[4]/select
+Xpath_eConnectPage_ProdSyncItemDisableValue_TextBox4 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[5]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncItemDisableANDOR_DropDown5 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[5]/td/select
+Xpath_eConnectPage_ProdSyncItemDisableField_TextBox5 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/input
+Xpath_eConnectPage_ProdSyncItemDisableExpression_DropDown5 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[5]/td[3]/select
+Xpath_eConnectPage_ProdSyncItemDisableValue_TextBox5 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[5]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncItemDisableANDOR_DropDown6 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[6]/td/select
+Xpath_eConnectPage_ProdSyncItemDisableField_TextBox6 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[6]/td[2]/input
+Xpath_eConnectPage_ProdSyncItemDisableExpression_DropDown6 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[6]/td[3]/select
+Xpath_eConnectPage_ProdSyncItemDisableValue_TextBox6 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[6]/td[4]/input
+
+Xpath_eConnectPage_ProdSyncItemDisableANDOR_DropDown7 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[7]/td/select
+Xpath_eConnectPage_ProdSyncItemDisableField_TextBox7 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[7]/td[2]/input
+Xpath_eConnectPage_ProdSyncItemDisableExpression_DropDown7 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[7]/td[3]/select
+Xpath_eConnectPage_ProdSyncItemDisableValue_TextBox7 = //tr[@id='row_leanswift_product_disable_product_disable_condition']/td[@class='value']/div/div/table/tbody/tr[7]/td[4]/input
+
+//prod sync Category Mapping
+Id_eConnectPage_ProductSyncCatMap_HeadNode = leanswift_category_sync-head
+Id_eConnectPage_ProductSyncCatSync_DropDown = leanswift_category_sync_enable_category_sync
+Id_eConnectPage_ProductSyncCatSrc_TextBox= leanswift_category_sync_m3_category_source
+
+Xpath_eConnectPage_ProductSyncCatMapAdd_Button = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tfoot/tr/td/button
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox1 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown1 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox2 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown2 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox3 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown3 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox4 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown4 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox5 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown5 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox6 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown6 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[6]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox7 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown7 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox8 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[8]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown8 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[8]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox9 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[9]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown9 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[9]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3CatSrcVal_TextBox10 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[10]/td/input
+Xpath_eConnectPage_ProductSyncMagCat_DropDown10 = //tr[@id='row_leanswift_category_sync_m3_category_mapping']/td[@class='value']/div/div/table/tbody/tr[10]/td[2]/select
+
+Id_eConnectPage_ProductSyncChngCatExisProd_Dropdown = leanswift_category_sync_change_item_category
+Id_eConnectPage_ProductSyncDefCatId_Dropdown = leanswift_category_sync_default_category_id
+
+//--Product Sync Attribute Set Mapping
+
+Id_eConnectPage_ProductSyncChngAttr_DropDown = leanswift_attributeset_sync_enable_attributeset_sync
+Id_eConnectPage_ProductSyncM3AttrSrc_TextBox = leanswift_attributeset_sync_m3_attributeset_source
+Xpath_eConnectPage_ProductSyncAttrSetAdd_button = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tfoot/tr/td/button
+
+Xpath_eConnectPage_ProductSyncM3AttrSrcVal_TextBox1 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[1]/td/input
+Xpath_eConnectPage_ProductSyncMageAttrSet_Dropdown1 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[1]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3AttrSrcVal_TextBox2 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td/input
+Xpath_eConnectPage_ProductSyncMageAttrSet_Dropdown2 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3AttrSrcVal_TextBox3 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td/input
+Xpath_eConnectPage_ProductSyncMageAttrSet_Dropdown3 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3AttrSrcVal_TextBox4 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td/input
+Xpath_eConnectPage_ProductSyncMageAttrSet_Dropdown4 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3AttrSrcVal_TextBox5 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td/input
+Xpath_eConnectPage_ProductSyncMageAttrSet_Dropdown5 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3AttrSrcVal_TextBox6 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td/input
+Xpath_eConnectPage_ProductSyncMageAttrSet_Dropdown6 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[2]/select
+
+Xpath_eConnectPage_ProductSyncM3AttrSrcVal_TextBox7 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td/input
+Xpath_eConnectPage_ProductSyncMageAttrSet_Dropdown7 = //tr[@id='row_leanswift_attributeset_sync_m3_attributeset_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[2]/select
+
+Id_eConnectPage_ProductSyncChngAttr_DropDown = leanswift_attributeset_sync_change_item_attributeset
+Id_eConnectPage_ProductSyncDefAttr_Dropdown = leanswift_attributeset_sync_default_attributeset_id
+
+//Customer Synchronization
+Id_eConnectPage_CustomerSync_Dropdown = leanswift_customer_sync_login_sync
+Id_eConnectPage_CustomerSyncAddrTypeId_TextBox = leanswift_customer_sync_address_type_id
+Xpath__eConnectPage_CustomerSyncMasterMapAdd_Button = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tfoot/tr/td/button
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown1 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[1]/td[1]/select
+Xpath_eConnectPage_CustSyncMastMapM3Attr_DropDown1 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[1]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown2 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[1]/select
+Xpath_eConnectPage_CustSyncMastMapM3Attr_DropDown2 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown3 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[1]/select
+Xpath_eConnectPage_CustSyncMastMapM3Attr_DropDown3 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown4 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[1]/select
+Xpath_eConnectPage_CustSyncMastMapM3Attr_DropDown4 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown5 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[1]/select
+Xpath_eConnectPage_CustSyncMastMapM3Attr_DropDown5 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown6 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[1]/select
+Xpath_eConnectPage_CustSyncMastMapM3Attr_DropDown6 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown7 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[1]/select
+Xpath_eConnectPage_CustSyncMastMapM3Attr_DropDown7 = //tr[@id='row_leanswift_customer_sync_master_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[2]/select
+
+Xpath__eConnectPage_CustomerBillingAddrMapAdd_Button = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tfoot/tr/td/button
+
+Xpath_eConnectPage_CustSyncBillingAddrMageAttr_DropDown1 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[1]/td[1]/select
+Xpath_eConnectPage_CustSyncBillingAddrM3Attr_DropDown1 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/select
+
+Xpath_eConnectPage_CustSyncBillingAddrMageAttr_DropDown2 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[1]/select
+Xpath_eConnectPage_CustSyncBillingAddrM3Attr_DropDown2 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/select
+
+Xpath_eConnectPage_CustSyncBillingAddrMageAttr_DropDown3 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[1]/select
+Xpath_eConnectPage_CustSyncBillingAddrM3Attr_DropDown3 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[2]/select
+
+Xpath_eConnectPage_CustSyncBillingAddrMageAttr_DropDown4 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[1]/select
+Xpath_eConnectPage_CustSyncBillingAddrM3Attr_DropDown4 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[2]/select
+
+Xpath_eConnectPage_CustSyncBillingAddrMageAttr_DropDown5 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[1]/select
+Xpath_eConnectPage_CustSyncBillingAddrM3Attr_DropDown5 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[2]/select
+
+Xpath_eConnectPage_CustSyncBillingAddrMageAttr_DropDown6 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[1]/select
+Xpath_eConnectPage_CustSyncBillingAddrM3Attr_DropDown6 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[2]/select
+
+Xpath_eConnectPage_CustSyncBillingAddrMageAttr_DropDown7 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[1]/select
+Xpath_eConnectPage_CustSyncBillingAddrM3Attr_DropDown7 = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[2]/select
+
+Xpath__eConnectPage_CustomerSyncShippingAddrAdd_Button = //tr[@id='row_leanswift_customer_sync_billing_address_mapping']/td[@class='value']/div/div/table/tfoot/tr/td/button
+
+Xpath_eConnectPage_CustSyncShippingAddrMageAttr_DropDown1 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[1]/td[1]/select
+Xpath_eConnectPage_CustSyncShippingAddrM3Attr_DropDown2 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown2 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[1]/select
+Xpath_eConnectPage_CustSyncShippingAddrM3Attr_DropDown2 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown3 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[1]/select
+Xpath_eConnectPage_CustSyncShippingAddrM3Attr_DropDown3 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[3]/td[2]/select
+
+Xpath_eConnectPage_CustSyncMastMapMageAttr_DropDown4 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[1]/select
+Xpath_eConnectPage_CustSyncShippingAddrM3Attr_DropDown4 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[4]/td[2]/select
+
+Xpath_eConnectPage_CustSyncShippingAddrMageAttr_DropDown5 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[1]/select
+Xpath_eConnectPage_CustSyncShippingAddrM3Attr_DropDown5 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[5]/td[2]/select
+
+Xpath_eConnectPage_CustSyncShippingAddrMageAttr_DropDown6 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[1]/select
+Xpath_eConnectPage_CustSyncShippingAddrM3Attr_DropDown6 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[6]/td[2]/select
+
+Xpath_eConnectPage_CustSyncShippingAddrMageAttr_DropDown7 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[1]/select
+Xpath_eConnectPage_CustSyncShippingAddrM3Attr_DropDown7 = //tr[@id='row_leanswift_customer_sync_shipping_address_mapping']/td[@class='value']/div/div/table/tbody/tr[7]/td[2]/select
+
+
+//Customer General Config
+Id_eConnectPage_CustGeneralConfig_HeadNode = leanswift_customer_configuration-head
+Id_eConnectPage_ERPCustRegisterEnable_Dropdown = leanswift_customer_configuration_enable_b2b_registration
 Id_eConnectPage_CustConfCreateNewCust_Dropdown = leanswift_customer_configuration_new_customer_creation
-//leanswift_customer_configuration-head
 Id_eConnectPage_CustConfCommonCustID_TextBox = leanswift_customer_configuration_common_customer_id
 Id_eConnectPage_CustTemplateID_TextBox = leanswift_customer_configuration_customer_template_id
-
 Id_eConnectPage_CustConfCommonCustIDNewYes_TextBox = leanswift_econnect_customer_general_cust_tmpl_id
-Id_eConnectPage_ERPCustRegisterEnable_Dropdown = leanswift_customer_configuration_enable_b2b_registration
-//leanswift_customer_configuration_enable_b2b_registration
 Id_eConnectPage_CustomerTemplateId_TextBox = leanswift_customer_configuration_customer_template_id1
-//leanswift_econnect_customer_general_cust_reg_tmpl_id
-Id_eConnectPage_CustSync_HeadNode = leanswift_econnect_custsync-head
-Id_eConnectPage_CustSyncUpdtCustDataOnLogin_Dropdown = leanswift_econnect_custsync_enable_sync
-Id_eConnectPage_CustSyncAddrTypeIds_TextBox = leanswift_econnect_custsync_address_type_id
-Xpath_eConnectPage_CustSyncBillgAddrM3AttributesRecord_WebElements = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr
-Xpath_eConnectPage_CustSyncBillgAddrM3AttributesEmptyAddMethod_Button = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
-Xpath_eConnectPage_CustSyncMagentoBillgAddrAttr_Dropdown1 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown1  = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncBillgAddrM3AttributesAddToEndMethod_Button = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown2 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown2 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown3 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown3 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown4 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown4 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown5 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown5 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown6 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown6 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown7 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown7 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown8 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[9]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown8 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[9]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown9 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[10]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown9 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[10]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoAttrBillgAddr_Dropdown10 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[11]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrBillgAddr_Dropdown10 = //tr[@id='row_leanswift_econnect_custsync_customer_import_billing']/td[@class='value']/div[1]/table/tbody/tr[11]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncShipgAddrM3AttributesRecord_WebElements = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr
-Xpath_eConnectPage_CustSyncShipgAddrM3AttributesEmptyAddMethod_Button = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
-Xpath_eConnectPage_CustSyncShippingAddrM3AttributesAddToEndMethod_Button = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
-Xpath_eConnectPage_CustSyncMagentoShipgAddrAttr_Dropdown1 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrShipgAddr_Dropdown1 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoShipgAddrAttr_Dropdown2 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrShipgAddr_Dropdown2 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoShipgAddrAttr_Dropdown3 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrShipgAddr_Dropdown3 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[4]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoShipgAddrAttr_Dropdown4 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrShipgAddr_Dropdown4 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[5]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoShipgAddrAttr_Dropdown5 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrShipgAddr_Dropdown5 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[6]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoShipgAddrAttr_Dropdown6 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrShipgAddr_Dropdown6 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[7]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoShipgAddrAttr_Dropdown7 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrShipgAddr_Dropdown7 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[8]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncMagentoShipgAddrAttr_Dropdown8 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[9]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrShipgAddr_Dropdown8 = //tr[@id='row_leanswift_econnect_custsync_customer_import_shipping']/td[@class='value']/div[1]/table/tbody/tr[9]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncCustMappgM3AttributesRecord_WebElements = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr
-Xpath_eConnectPage_CustSyncCustMappgM3AttributesEmptyAddMethod_Button = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
-Xpath_eConnectPage_CustSyncMagentoCustMappgAttr_Dropdown1 = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrCustMappg_Dropdown1 = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_attribute')]/select
-Xpath_eConnectPage_CustSyncCustomerMappgM3AttributesAddToEndMethod_Button = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
-Xpath_eConnectPage_CustSyncMagentoCustMappgAttr_Dropdown2 = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'magento_attribute')]/select
-Xpath_eConnectPage_CustSyncM3AttrCustMappg_Dropdown2 = //tr[@id='row_leanswift_econnect_custsync_customer_import_master']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_attribute')]/select
-Id_eConnectPage_SalesEnableOrderComments_Dropdown = leanswift_econnect_sales_order_comments
-Id_eConnectPage_SalesSendConfirmation_Dropdown = leanswift_econnect_sales_send_order_conf_after_erp_order_placed
-Id_eConnectPage_SalesDisplayInvoice_Dropdown = leanswift_econnect_sales_display_invoice
-Id_eConnectPage_SalesCapturePaymentOnline_Dropdown = leanswift_econnect_sales_payment_capture
+
+Id_eConnectPage_CustsyncConfig_HeadNode = leanswift_customer_sync-head
+
+//Sales
+Id_eConnectPage_SalesEnableOrderComments_Dropdown = leanswift_sales_enable_order_comments
+Id_eConnectPage_SalesSendConfirmation_Dropdown = leanswift_sales_send_order_confirmation
+Id_eConnectPage_SalesDisplayInvoice_Dropdown = leanswift_sales_display_invoice
+Id_eConnectPage_SalesCapturePaymentOnline_Dropdown = leanswift_sales_payment_capture
 Id_eConnectPage_EnableShipComplete_Dropdown = leanswift_sales_ship_complete
+
+//Order Charges
 Id_eConnectPage_OrderCharges_HeadNode = leanswift_order_charges-head
 Id_eConnectPage_OrderChargesTaxTransfer_Dropdown = leanswift_order_charges_sales_tax_transfer
 Id_eConnectPage_OrderChargesTaxChargeCode_Dropdown = leanswift_order_charges_sales_tax_charge_id
 Id_eConnectPage_OrderChargesFeeChargeType_Dropdown = leanswift_payments_invoice_charge_type
 Id_eConnectPage_OrderChargesFeeChargeCode_Dropdown = leanswift_order_charges_charge_code
-Id_eConnectPage_OrderChargesGiftWrapTransfer_Dropdown = leanswift_econnect_order_charges_gift_wrap_transfer
-Id_eConnectPage_OrderChargesGiftWrapChargeType_Dropdown = leanswift_econnect_order_charges_gift_wrap_type
-Id_eConnectPage_OrderChargesGiftWrapOrderChargeCode_Dropdown = leanswift_econnect_order_charges_gift_wrap_order_charge_code
-Id_eConnectPage_OrderChargesGiftWrapLineChargeCode_Dropdown = leanswift_econnect_order_charges_gift_wrap_line_charge_code
-Id_eConnectPage_OrderChargesGiftWrapOrderChargeItem_Dropdown = leanswift_econnect_order_charges_gift_wrap_order_charge_item
-Id_eConnectPage_OrderChargesGiftWrapLineChargeItem_Dropdown = leanswift_econnect_order_charges_gift_wrap_line_charge_item
 Id_eConnectPage_OrderChargesFeeChargeCodeNS_Dropdown = leanswift_order_charges_non_stock_item
+Id_eConnectPage_OrderChargesGiftWrapTransfer_Dropdown = leanswift_order_charges_gift_wrap_transfer
+Id_eConnectPage_OrderChargesGiftWrapChargeType_Dropdown = leanswift_order_charges_gift_wrap_type
+Id_eConnectPage_OrderChargesGiftWrapOrderChargeCode_Dropdown = leanswift_order_charges_gift_wrap_order_charge_code
+Id_eConnectPage_OrderChargesGiftWrapLineChargeCode_Dropdown = leanswift_order_charges_gift_wrap_line_charge_code
+Id_eConnectPage_OrderChargesGiftWrapOrderChargeItem_Dropdown = leanswift_order_charges_gift_wrap_order_charge_item
+Id_eConnectPage_OrderChargesGiftWrapLineChargeItem_Dropdown = leanswift_order_charges_gift_wrap_line_charge_item
+
+//Payments
 Id_eConnectPage_Payments_HeadNode = leanswift_payments-head
-Id_eConnectPage_PaymentsReAuthAmount_TextBox = leanswift_econnect_payments_reauth_amount
-Xpath_eConnectPage_PaymentsPayProviderRecord_WebElements = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[1]/table/tbody/tr
-Xpath_eConnectPage_PaymentsPayProviderEmptyAddMethod_Button = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
-Xpath_eConnectPage_PaymentsPayProviderAddToEndMethod_Button = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
-Xpath_eConnectPage_PaymentsMagentoMethod_Dropdown1 = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'-payment_method')]/select
-Xpath_eConnectPage_PaymentsM3Terms_Dropdown1 = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_payment_terms')]/select
-Xpath_eConnectPage_PaymentsM3Method_Dropdown1 = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[2]/td[contains(@class,'m3_payment_method')]/select
-Xpath_eConnectPage_PaymentsMagentoMethod_Dropdown2 = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'-payment_method')]/select
-Xpath_eConnectPage_PaymentsM3Terms_Dropdown2 = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_payment_terms')]/select
-Xpath_eConnectPage_PaymentsM3Method_Dropdown2 = //tr[@id='row_leanswift_econnect_payments_provider']/td[@class='value']/div[1]/table/tbody/tr[3]/td[contains(@class,'m3_payment_method')]/select
+Id_eConnectPage_PaymentsReAuthAmount_TextBox = leanswift_payments_reauth_amount
+Xpath_eConnectPage_PaymentsPayProviderRecord_WebElements = //tr[@id='row_leanswift_payments_payment_provider']/td[@class='value']/div[1]/table/tbody/tr
+
+Xpath_eConnectPage_PaymentsPayProviderAddToEndMethod_Button = //tr[@id='row_leanswift_payments_payment_provider']/td[@class='value']/div[1]/table/tfoot/tr/td/button
+
+Xpath_eConnectPage_PaymentsMagentoMethod_Dropdown1 //tr[@id='row_leanswift_payments_payment_provider']/td[@class='value']/div/div/table/tbody/tr[1]/td/select
+Xpath_eConnectPage_PaymentsM3Terms_Dropdown1 = //tr[@id='row_leanswift_payments_payment_provider']/td[@class='value']/div/div/table/tbody/tr[1]/td[2]/select
+Xpath_eConnectPage_PaymentsM3Method_Dropdown1 = //tr[@id='row_leanswift_payments_payment_provider']/td[@class='value']/div/div/table/tbody/tr[1]/td[3]/select
+
+Xpath_eConnectPage_PaymentsMagentoMethod_Dropdown2 = //tr[@id='row_leanswift_payments_payment_provider']/td[@class='value']/div/div/table/tbody/tr[2]/td/select
+Xpath_eConnectPage_PaymentsM3Terms_Dropdown2 = //tr[@id='row_leanswift_payments_payment_provider']/td[@class='value']/div/div/table/tbody/tr[2]/td[2]/select
+Xpath_eConnectPage_PaymentsM3Method_Dropdown2 = //tr[@id='row_leanswift_payments_payment_provider']/td[@class='value']/div/div/table/tbody/tr[2]/td[3]/select
+
 Id_eConnectPage_PaymentsInvoiceFeeChargeType_Dropdown =  leanswift_payments_invoice_charge_type
-Xpath_eConnectPage_PaymentsInvoiceFeesRecord_WebElements = //tr[@id='row_leanswift_econnect_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr
-Xpath_eConnectPage_PaymentsInvoiceFeesEmptyAddMethod_Button = //tr[@id='row_leanswift_econnect_payments_invoice_fees']/td[@class='value']/div[2]/button[contains(@id,'emptyAddBtn')]
-Xpath_eConnectPage_PaymentsInvoiceFeesAddToEndMethod_Button = //tr[@id='row_leanswift_econnect_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr[*]/td[2]/button[contains(@id,'addToEndBtn')]
-Xpath_eConnectPage_PaymentsInvoicePayMethod_Dropdown = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr/td/select
-Xpath_eConnectPage_PaymentsInvoiceFeeAmount_TextBox = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr/td[2]/input
-Xpath_eConnectPage_PaymentsInvoiceFeeChargeCode_Dropdown = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr/td[3]/select
-Xpath_eConnectPage_PaymentsInvoiceFeeChargeItemNo_Dropdown = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr/td[4]/select
+Xpath_eConnectPage_PaymentsInvoiceFeesRecord_WebElements = //tr[@id='row_leanswift_payments_invoice_fees']/td[@class='value']/div[1]/table/tbody/tr
+Xpath_eConnectPage_PaymentsInvoiceFeesAddToEndMethod_Button = //tr[@id='row_leanswift_payments_invoice_fees']/td[@class='value']/div/div/table/tfoot/tr/td/button
 
-Xpath_eConnectPage_PaymentsMagentoMethod_Dropdown = //tr[@id='row_leanswift_payments_payment_provider']/td[2]/div/div/table/tbody/tr/td/select
-Xpath_eConnectPage_PaymentsM3Terms_Dropdown = //tr[@id='row_leanswift_payments_payment_provider']/td[2]/div/div/table/tbody/tr/td[2]/select
-Xpath_eConnectPage_PaymentsM3Method_Dropdown = //tr[@id='row_leanswift_payments_payment_provider']/td[2]/div/div/table/tbody/tr/td[3]/select
+Xpath_eConnectPage_PaymentsInvoicePayMethod_Dropdown1 = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr/td/select
+Xpath_eConnectPage_PaymentsInvoiceFeeAmount_TextBox1 = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr/td[2]/input
+Xpath_eConnectPage_PaymentsInvoiceFeeChargeCode_Dropdown1 = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr/td[3]/select
+Xpath_eConnectPage_PaymentsInvoiceFeeChargeItemNo_Dropdown1 = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr/td[4]/select
 
+Xpath_eConnectPage_PaymentsInvoicePayMethod_Dropdown2 = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr[2]/td/select
+Xpath_eConnectPage_PaymentsInvoiceFeeAmount_TextBox2 = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr[2]/td[2]/input
+Xpath_eConnectPage_PaymentsInvoiceFeeChargeCode_Dropdown2 = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr[2]/td[3]/select
+Xpath_eConnectPage_PaymentsInvoiceFeeChargeItemNo_Dropdown2 = //tr[@id='row_leanswift_payments_invoice_fees']/td[2]/div/div/table/tbody/tr[2]/td[4]/select
 
-Id_eConnectPage_PaymentsInvoiceFeeAmount_TextBox = _1467280048826_826_fee_amount
-Id_eConnectPage_PaymentsInvoiceFeeChargeCode_Dropdown = _1467280048826_826_fee_code
-Id_eConnectPage_PaymentsInvoiceFeeChargeItemNo_Dropdown = _1467280048826_826_fee_item_no
-Id_eConnectPage_PaymentsInvoicePayMethod_Dropdown = _1467280048826_826_payment_method
-Id_eConnectPage_PaymentsEnableCreditMemo_Dropdown = leanswift_econnect_payments_credit_memo
-Id_eConnectPage_PaymentsCCRefundType_Dropdown = leanswift_econnect_payments_credit_type
+Id_eConnectPage_PaymentsEnableCreditMemo_Dropdown = leanswift_payments_credit_memo
+Id_eConnectPage_PaymentsCCRefundType_Dropdown = leanswift_payments_credit_type
+
+//Price sync
 Id_eConnectPage_PriceSync_HeadNode = leanswift_price_sync-head
 Id_eConnectPage_PriceSyncEnable_Dropdown = leanswift_price_sync_enable_price
 Id_eConnectPage_PriceSyncCacheHours_TextBox = leanswift_price_sync_cache_hours
 
-Id_eConnectPage_ERPInventoryAttribute_Dropdown = leanswift_econnect_inventory_sync_erp_inventory_attribute
-Id_eConnectPage_InventorySyncProductLoad_Dropdown = leanswift_econnect_inventory_sync_sync_on_load
-Id_eConnectPage_InventorySyncAddToCart_Dropdown = leanswift_econnect_inventory_sync_sync_on_add_to_cart
-Id_eConnectPage_InventorySyncCheckOut_Dropdown = leanswift_econnect_inventory_sync_sync_on_checkout
+//Inventory Synchronization
+Id_eConnectPage_InventorySync_HeadNode = leanswift_inventory_sync-head
+Id_eConnectPage_ERPInventoryAttribute_Dropdown = leanswift_inventory_sync_erp_inventory_attribute
+Id_eConnectPage_InventorySyncProductLoad_Dropdown = leanswift_inventory_sync_sync_on_load
+Id_eConnectPage_InventorySyncAddToCart_Dropdown = leanswift_inventory_sync_sync_on_add_to_cart
+Id_eConnectPage_InventorySyncCheckOut_Dropdown = leanswift_inventory_sync_sync_on_checkout
+
+//version info
 Id_eConnectPage_VersionInfo_HeadNode = leanswift_version-head
 Xpath_eConnectPage_MagentoeConenctVersion_Text = //tr[@id='row_leanswift_version_magento']/td[2]/strong
-//tr[@id='row_leanswift_econnect_version_econnect_version']/td[2]/strong
 Xpath_eConnectPage_JavaeConenctVersion_Text = //tr[@id='row_leanswift_econnect_version_Java_version']/td[2]/strong
-//[@id='row_leanswift_version_java']/td[1]/label
+
 Xpath_ConfigurationPage_SaveConfig_Button = //button[@type='button' and @title='Save Config']
 
 
