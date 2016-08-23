@@ -863,6 +863,12 @@ public class KeywordFunctions {
   		}
        }
    
+   //Function to return current url present in the browser
+   public String getCurrentUrl(){
+	  return driver.getCurrentUrl();
+   }
+   
+   
     //Application specific functions
 	//******************************
 	
@@ -922,8 +928,10 @@ public class KeywordFunctions {
 			By locator;
 			locator = locatorValue(this.getLocatorType(locatorName), this.getLocatorValue(locatorName));
 			List<WebElement> element = driver.findElements(locator);
-			for(int i=2; i < element.size(); i++) {
-				String locatorValue = this.getLocatorValue(locatorName)+"[*]/td["+buttonPosition+"]/button";
+			System.out.println(element.size());
+			for(int i=0; i < element.size(); i++) {
+				int tr_num = i+1;
+				String locatorValue = this.getLocatorValue(locatorName)+"["+tr_num+"]/td["+buttonPosition+"]/button";
 				System.out.println(locatorValue);
 				WebElement locator_element = driver.findElement(By.xpath(locatorValue));
 				if(locator_element.isDisplayed()){
@@ -964,6 +972,13 @@ public class KeywordFunctions {
 			Constants.isProceed = false;
 			System.out.println(e.getMessage());
 		}
+    }
+    
+    //get the page source
+    public void getPageSource(){
+    	System.out.println("================================================Page Source===========================================");
+    	System.out.println(driver.getPageSource());
+    	System.out.println("==================================================END==================================================");
     }
 	
 	/*This function is used to append a 4 digit random number to a static email address to represent an unique email id during new customer registration
