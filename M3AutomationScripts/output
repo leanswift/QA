@@ -1,0 +1,300 @@
+Trying to create Y70040-5 from Y70040...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70040-5&CITN=Y70040
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70040-6 from Y70040...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70040-6&CITN=Y70040
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70040-7 from Y70040...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70040-7&CITN=Y70040
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70040-8 from Y70040...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70040-8&CITN=Y70040
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70040-9 from Y70040...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70040-9&CITN=Y70040
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70040-10 from Y70040...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70040-10&CITN=Y70040
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70055-5 from Y70055...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70055-5&CITN=Y70055
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70055-6 from Y70055...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70055-6&CITN=Y70055
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70055-7 from Y70055...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70055-7&CITN=Y70055
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70055-8 from Y70055...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70055-8&CITN=Y70055
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70055-9 from Y70055...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70055-9&CITN=Y70055
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70055-10 from Y70055...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70055-10&CITN=Y70055
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70043-5 from Y70043...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70043-5&CITN=Y70043
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70043-6 from Y70043...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70043-6&CITN=Y70043
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70043-7 from Y70043...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70043-7&CITN=Y70043
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70043-8 from Y70043...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70043-8&CITN=Y70043
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70043-9 from Y70043...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70043-9&CITN=Y70043
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create Y70043-10 from Y70043...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=Y70043-10&CITN=Y70043
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="XAD0001" type="ServerReturnedNOK"><Message>A record has been entered by user DETA01                                                                                                                                                                                                         XAD0001           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -5 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-5&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -6 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-6&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -7 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-7&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -8 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-8&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -9 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-9&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -10 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-10&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -5 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-5&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -6 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-6&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -7 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-7&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -8 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-8&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -9 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-9&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+
+Trying to create -10 from ...
+
+URL: 
+https://172.30.1.121:22108/m3api-rest/execute/MMS200MI/CpyItmBasic;metadata=true;maxrecs=100;excludempty=false?&CONO=771&STAT=20&ITNO=-10&CITN=
+
+Response from M3:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ErrorMessage xmlns="http://lawson.com/m3/miaccess" code="WIT0103" type="ServerReturnedNOK"><Message>Item number  does not exist                                                                                                                                                                                                                      WIT0103           </Message></ErrorMessage>
+------------------------------------------------------------------------------------
+
+

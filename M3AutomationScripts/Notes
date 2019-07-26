@@ -1,0 +1,9 @@
+Item Creation:
+
+ ./copy-items.sh 510 520 771 20 prma01@leanswift.com Lean5226 test.csv
+ ./copy-items-whs.sh 500 510 771 001 001 prma01@leanswift.com Lean5226 test.csv
+ ./copy-items-fac.sh 500 510 771 A01 A01 prma01@leanswift.com Lean5226 test.csv
+
+Assign Stock:
+
+ ./assign-stocks.sh 500 510 771 001 YF0101 20190724 prma01@leanswift.com Lean5226 test.csv
